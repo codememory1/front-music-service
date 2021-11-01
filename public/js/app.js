@@ -577,8 +577,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_cookies__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_cookies__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vue_inline_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-inline-svg */ "./node_modules/vue-inline-svg/dist/vue-inline-svg.js");
 /* harmony import */ var vue_inline_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_inline_svg__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue_svg_filler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-svg-filler */ "./node_modules/vue-svg-filler/dist/vue-svg-filler.min.js");
-/* harmony import */ var vue_svg_filler__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_svg_filler__WEBPACK_IMPORTED_MODULE_4__);
 
  // Import plugins
 
@@ -586,8 +584,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 vue__WEBPACK_IMPORTED_MODULE_3__["default"].use((vue_cookies__WEBPACK_IMPORTED_MODULE_1___default()));
-
-vue__WEBPACK_IMPORTED_MODULE_3__["default"].component('svg-filler', (vue_svg_filler__WEBPACK_IMPORTED_MODULE_4___default()));
 vue__WEBPACK_IMPORTED_MODULE_3__["default"].component('inline-svg', (vue_inline_svg__WEBPACK_IMPORTED_MODULE_2___default()));
 vue__WEBPACK_IMPORTED_MODULE_3__["default"].productionTip = false;
 new vue__WEBPACK_IMPORTED_MODULE_3__["default"]({
@@ -5999,23 +5995,6 @@ if (inBrowser && window.Vue) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (VueRouter);
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-svg-filler/dist/vue-svg-filler.min.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/vue-svg-filler/dist/vue-svg-filler.min.js ***!
-  \****************************************************************/
-/***/ (function(module) {
-
-/*!
- * vue-svg-filler v1.0.5
- * (c) 2018-present Pongsatorn Nitithammawoot <biig_pongsatorn@hotmail.com>
- * Released under the MIT License.
- */
-!function(t,e){ true?module.exports=e():0}(this,function(){"use strict";return{name:"vue-svg-filler",render:function(t){var e=this;return t("svg",{style:{"vertical-align":"middle"},attrs:{viewBox:this.viewBox,width:this.width,height:this.height,fill:this.fillColor,stroke:this.strokeColor},on:{mouseover:function(){return e.mouseHoverEvent("over")},mouseleave:function(){return e.mouseHoverEvent("leave")},click:function(t){return e.$emit("click",t)}}},[t("path",{attrs:{d:this.dataOfPath}})])},props:{path:{type:String,required:!0},fill:{type:String,default:"#000"},width:{type:String,default:"24px"},height:{type:String,default:"24px"},hoverColor:{type:String},stroke:{type:String,default:"none"},hoverStrokeColor:{type:String}},data:function(){return{viewBox:"0 0 24 24",dataOfPath:"",fillColor:"#000",strokeColor:"none"}},mounted:function(){this.createSvgElement()},watch:{fill:function(t){this.updateFillColor(t)},stroke:function(t){this.updateStrokeColor(t)},path:function(){this.createSvgElement()}},methods:{createSvgElement:function(){var t=this,e=window.location.origin,o="/"===this.path.substring(0,1)?""+e+this.path:e+"/"+this.path,r=new XMLHttpRequest;r.open("GET",o,!0),r.onload=function(){if(r.status>=200&&r.status<400){var e=(new DOMParser).parseFromString(r.responseText,"text/xml"),i=e.getElementsByTagName("svg")[0],n=e.getElementsByTagName("path")[0];if(!n)return void _errorLog("No svg path element in your svg file.\nPath : "+o);t.viewBox=i.getAttribute("viewBox"),t.updateSrcSvgElement(n.getAttribute("d")),t.updateFillColor(t.fill),t.updateStrokeColor(t.stroke)}else _errorLog("Can't load element from this path.\nPath : "+o)},r.onerror=function(){_errorLog("Can't load element from this path.\nPath : "+o)},r.send()},updateSrcSvgElement:function(t){t?this.dataOfPath=t:_errorLog("Can't get attribute 'd' from your SVG file.")},updateFillColor:function(t){this.fillColor=t},updateStrokeColor:function(t){this.strokeColor=t},mouseHoverEvent:function(t){"over"===t?(this.hoverColor&&this.updateFillColor(this.hoverColor),this.hoverStrokeColor&&this.updateStrokeColor(this.hoverStrokeColor)):(this.hoverColor&&this.updateFillColor(this.fill),this.hoverStrokeColor&&this.updateStrokeColor(this.stroke))},_errorLog:function(t){console.error("[ERROR] : vue-svg-filler, "+t)}}}});
-//# sourceMappingURL=vue-svg-filler.min.js.map
 
 
 /***/ }),
