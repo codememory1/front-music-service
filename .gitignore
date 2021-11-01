@@ -1,0 +1,7 @@
+/vendor/
+/.idea/
+composer.lock
+/storage/
+.htaccess
+.env
+node_modules
