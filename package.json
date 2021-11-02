@@ -58,6 +58,7 @@
     "vue-cookies": "^1.7.4",
     "vue-inline-svg": "^2.1.0",
     "vue-loader": "^15.9.8",
-    "vue-router": "^3.5.2"
+    "vue-router": "^3.5.2",
+    "vue2-touch-events": "^3.2.2"
   }
 }

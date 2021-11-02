@@ -3,15 +3,14 @@ import router from './router'
 
 // Import plugins
 import VueCookies from 'vue-cookies'
+import TouchEvents from 'vue2-touch-events'
 
 // Import components
-import InlineSvg from 'vue-inline-svg';
+import InlineSvg from 'vue-inline-svg'
 
-Vue.use(VueCookies)
+Vue.use(VueCookies);
+Vue.use(TouchEvents);
 
-import SvgFiller from 'vue-svg-filler'
-
-Vue.component('svg-filler', SvgFiller)
 Vue.component('inline-svg', InlineSvg);
 
 Vue.productionTip = false
