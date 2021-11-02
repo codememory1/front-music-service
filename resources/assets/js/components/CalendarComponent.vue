@@ -65,7 +65,7 @@ export default {
     displayedData: {
       year: null,
       month: null,
-      day: null,
+      day: null
     },
     startedFromWeek: 1
   }),
