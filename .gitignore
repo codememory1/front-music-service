@@ -5,3 +5,5 @@ composer.lock
 .htaccess
 .env
 node_modules
+package-lock.json
+public/js/app.js
