@@ -11,6 +11,8 @@ use Codememory\Routing\Router;
  *
  */
 
+Router::get('/:path', MainController::class . '#home')->with('path', '.*');
+
 Router::subdomainGroup('player', function () {
-    Router::get('/:path', MainController::class . '#web')->with('path', '.*');
+    Router::get('/:path', MainController::class . '#player')->with('path', '.*');
 });

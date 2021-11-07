@@ -18,13 +18,35 @@ class MainController extends AbstractController
     /**
      * @return void
      */
-    public function web(): void
+    public function home(): void
+    {
+
+        $this->templateRender('home');
+
+    }
+
+    /**
+     * @return void
+     */
+    public function player(): void
+    {
+
+        $this->templateRender('player');
+
+    }
+
+    /**
+     * @param string $template
+     *
+     * @return void
+     */
+    private function templateRender(string $template): void
     {
 
         /** @var Translation $translation */
         $translation = $this->get('translator');
 
-        $this->render('index', [
+        $this->render($template, [
             'parameters' => [
                 'active_lang'     => $translation->language->getActiveLang(),
                 'app_name'        => env('app.name'),

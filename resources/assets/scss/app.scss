@@ -3,7 +3,15 @@
 @import "fonts";
 @import "buttons";
 @import "components/commonComponents";
+@import "libs/font-awesome";
 
 body {
   font-family: Roboto, sans-serif;
+  background-color: $light-bg;
+}
+
+.container {
+  max-width: 1220px;
+  padding: 0 20px;
+  margin: 0 auto;
 }

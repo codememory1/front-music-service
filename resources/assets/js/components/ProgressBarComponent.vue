@@ -1,114 +1,208 @@
 <template>
-  <div class="progress-bar" @click="clickByBar">
-    <div ref="progress-down" class="progress-bar--down"></div>
-    <div class="progress-bar--up" :style="'width:' + upWith + 'px' ">
-      <div ref="progress-circle" class="progress-bar--circle" @mousedown="down"></div>
-    </div>
-  </div>
+  <vue-slider
+	   v-model="value"
+	   :enable-cross="multipleCross"
+	   :min="min"
+	   :max="max"
+	   :interval="steep"
+	   :tooltip="enabledTooltip ? tooltipType : 'none'"
+	   :tooltip-placement="tooltipPositions"
+	   :tooltip-formatter="tooltipFormat"
+  />
 </template>
 <script>
+import VueSlider from 'vue-slider-component'
+
 export default {
+  components: {
+	VueSlider
+  },
+
   props: {
-    startWith: {
-      type: Number,
-      default: 0,
-      required: false
-    }
+	/**
+	 * Default value for progress
+	 *
+	 * @type {Number || Array}
+	 */
+	defaultValue: {
+	  type: [Number, Array],
+	  default: 0,
+	  required: false
+	},
+
+	/**
+	 * Enable cross for multiple progress bar. Prevents one part
+	 * of the bar from moving if it is larger than the other
+	 *
+	 * @type {Boolean}
+	 */
+	multipleCross: {
+	  type: Boolean,
+	  default: true,
+	  required: false
+	},
+
+	/**
+	 * Minimum value
+	 *
+	 * @type {Number}
+	 */
+	min: {
+	  type: Number,
+	  default: 0,
+	  required: false
+	},
+
+	/**
+	 * Maximum value
+	 *
+	 * @type {Number}
+	 */
+	max: {
+	  type: Number,
+	  default: 100,
+	  required: false
+	},
+
+	/**
+	 * Step when the bar moves
+	 *
+	 * @type {Number}
+	 */
+	steep: {
+	  type: Number,
+	  default: 1,
+	  required: false
+	},
+
+	/**
+	 * Enable tooltip work
+	 *
+	 * @type Boolean
+	 */
+	enabledTooltip: {
+	  type: Boolean,
+	  default: false,
+	  required: false
+	},
+
+	/**
+	 * Tooltip type when tooltip is enabled.
+	 * Kinds: {always, active, none}
+	 *
+	 * @type String
+	 */
+	tooltipType: {
+	  type: String,
+	  default: 'active',
+	  required: false
+	},
+
+	/**
+	 * Tooltip position.
+	 * Views: top, bottom
+	 *
+	 * @type Array
+	 */
+	tooltipPositions: {
+	  type: Array,
+	  default: () => (['top']),
+	  required: false
+	},
+
+	/**
+	 * Format (value) tooltip
+	 *
+	 * @type String
+	 */
+	tooltipFormat: {
+	  type: String,
+	  default: '{value}',
+	  required: false
+	}
   },
+
   data: () => ({
-    mousedown: false,
-    downRect: {},
-    circleRect: {},
-    upWith: 0
+	value: 0
   }),
+
   created() {
-    this.upWith = this.startWith;
-  },
-  mounted() {
-    this.downRect = this.$refs["progress-down"].getBoundingClientRect();
-    this.circleRect = this.$refs["progress-circle"].getBoundingClientRect();
+	this.value = this.defaultValue;
 
-    document.addEventListener('mouseup', this.up);
-  },
-  methods: {
-    /**
-     * Обычный клик про progress
-     * @param event
-     */
-    clickByBar(event) {
-      this.change(event.offsetX);
-    },
+	if (Array.isArray(this.defaultValue) && this.tooltipPositions.length < this.defaultValue.length) {
+	  const difference = this.defaultValue.length - this.tooltipPositions.length;
 
-    /**
-     * Обработка события при клике на progress
-     */
-    down() {
-      this.mousedown = true;
-
-      this.moveListener();
-    },
-
-    /**
-     * Удаления событий, когда отпущена мышка
-     */
-    up() {
-      this.mousedown = false;
-
-      document.removeEventListener('mouseup', this.down);
-      document.removeEventListener('mousemove', this.moveListener);
-    },
-
-    /**
-     * Обработка слушателя движении мышки
-     */
-    moveListener() {
-      document.addEventListener('mousemove', (event) => {
-        if (this.mousedown) {
-          this.change(event.clientX - this.circleRect.left);
-        }
-      });
-    },
-
-    /**
-     * Меняем позицию progress--up и создает события move
-     * @param pxPosition
-     */
-    change(pxPosition) {
-      const data = this.getCorrectPositions(pxPosition);
-
-      this.upWith = data.whole.px;
-
-      this.$emit('move', this.upWith);
-    },
-
-    /**
-     * Получить корректный объект позиции
-     * @param pxPosition
-     * @returns {{whole: {px: number, percent: number}, float: {px: number, percent: number}}}
-     */
-    getCorrectPositions(pxPosition) {
-      if (pxPosition >= this.downRect.width) {
-        pxPosition = this.downRect.width;
-      } else if (pxPosition <= 0) {
-        pxPosition = 0;
-      }
-
-      const percentagePosition = (pxPosition / this.downRect.width) * 100;
-
-      return {
-        whole: {
-          px: Math.round(pxPosition),
-          percent: Math.round(percentagePosition)
-        },
-        float: {
-          px: pxPosition,
-          percent: percentagePosition
-        }
-      };
-    }
+	  for (let i = 0; i < difference; i++) {
+		this.tooltipPositions.push(this.tooltipPositions[this.tooltipPositions.length - 1]);
+	  }
+	}
   }
 }
 </script>
-<style lang="scss" scoped>
-@import "../../scss/components/progressBar";
+<style lang="scss">
+@import "../../scss/variables";
+
+.vue-slider-rail {
+  background-color: $light-bg;
+  border-radius: 5px;
+}
+
+.vue-slider-process {
+  background-color: $accent;
+  transition-duration: 0s !important;
+  border-radius: 5px;
+}
+
+.vue-slider-dot {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: $accent;
+  border-radius: 100%;
+  border: 2px solid #fff;
+  transition: transform 0.2s ease-in-out !important;
+
+  &:hover {
+	transform: translate(-50%, -50%) scale(1.3) !important;
+  }
+}
+
+.vue-slider-dot-tooltip {
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 2px 5px;
+  min-width: 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  border-color: $accent;
+  background-color: $accent;
+}
+
+.vue-slider-dot-tooltip-inner-bottom:after, .vue-slider-dot-tooltip-inner-top:after {
+  left: 50%;
+  transform: translate(-50%);
+  height: 0;
+  width: 0;
+}
+
+.vue-slider-dot-tooltip-inner-top:after {
+  top: 97%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+  border-top-color: $accent;
+}
+
+.vue-slider-dot-tooltip-inner:after {
+  content: "";
+  position: absolute;
+}
+
+.vue-slider-dot-tooltip-inner-bottom:after {
+  bottom: 97%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+  border-bottom-color: #E03E10;
+}
 </style>

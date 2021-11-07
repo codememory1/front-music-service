@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import router from './router'
+import router from './routes/router'
 
 // Import plugins
 import AxiosInstance from './plugins/AxiosInstance'

@@ -51,10 +51,8 @@
 
 .volume_progress {
   margin: 0 10px;
-
-  > ::v-deep div.progress-bar--down {
-    width: 100px;
-  }
+  width: 100px!important;
+  cursor: pointer;
 }
 
 .player__center-control {
@@ -89,8 +87,9 @@
 }
 
 .duration_progress {
-  width: 100%;
+  width: 100%!important;
   margin: 0 55px;
+  cursor: pointer;
 }
 
 .duration, .total {
