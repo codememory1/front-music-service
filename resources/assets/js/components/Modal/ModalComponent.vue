@@ -7,8 +7,8 @@
 		  <div class="modal__close--btn" @click="close">
 			<i class="fal fa-times"></i>
 		  </div>
-		  <slot/>
 		</div>
+		<slot/>
 	  </div>
 	</div>
   </div>
