@@ -1,3 +1,3 @@
 import instance from "./instance";
 
-export default instance.get('/translations');
+export default instance.get("/translations");
