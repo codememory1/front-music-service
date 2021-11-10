@@ -1,20 +1,15 @@
 <template>
-	<progress-indicator-component
-		:labels="['1', '2']"
-		:activeIndex="1"
-	/>
+  <modal />
 </template>
 <script>
-import Player from "../../components/PlayerComponent"
-import ProgressIndicatorComponent from "../../components/ProgressIndicatorComponent";
+import Modal from "../../components/Modal/ModalComponent";
 
 export default {
   components: {
-	ProgressIndicatorComponent,
-	Player
+    Modal,
   },
   data: () => ({
-	value: [0, 100]
-  })
-}
+    value: [0, 100],
+  }),
+};
 </script>
