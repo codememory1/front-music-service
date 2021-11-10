@@ -21,7 +21,7 @@
   </div>
 </template>
 <script>
-import HexToRgba from "../modules/HexToRgba";
+import HexToRgba from "../../modules/HexToRgba";
 
 export default {
   props: {
@@ -116,7 +116,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "../../scss/variables";
+@import "../../../scss/variables";
 
 .subscription {
   width: 375px;

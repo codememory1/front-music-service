@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__logo">
-        <img src="public/images/logo.png" alt="logo">
+        <img src="public/images/logo.png" alt="logo" />
       </div>
       <div class="footer__columns">
         <div class="footer__column">
@@ -40,19 +40,22 @@
         </div>
         <div class="footer__column footer__column--network">
           <div class="footer_column__name">Social media</div>
-          <p>Follow us to social media to find out the latest updates on our progress</p>
+          <p>
+            Follow us to social media to find out the latest updates on our
+            progress
+          </p>
           <div class="networks">
             <a href="#">
-              <inline-svg src="public/images/icons/instagram-square.svg"/>
+              <inline-svg src="public/images/icons/instagram-square.svg" />
             </a>
             <a href="#">
-              <inline-svg src="public/images/icons/facebook-square.svg"/>
+              <inline-svg src="public/images/icons/facebook-square.svg" />
             </a>
             <a href="#">
-              <inline-svg src="public/images/icons/vk-square.svg"/>
+              <inline-svg src="public/images/icons/vk-square.svg" />
             </a>
             <a href="#">
-              <inline-svg src="public/images/icons/twitter-square.svg"/>
+              <inline-svg src="public/images/icons/twitter-square.svg" />
             </a>
           </div>
         </div>
@@ -70,7 +73,7 @@
   </footer>
 </template>
 <script>
-export default {}
+export default {};
 </script>
 <style lang="scss" scoped>
 @import "../../scss/components/footer";
