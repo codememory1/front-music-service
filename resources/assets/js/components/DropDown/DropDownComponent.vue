@@ -1,12 +1,14 @@
 <template>
   <div class="drop-down">
-	<ul class="drop-down__items">
-	  <slot name="items"/>
-	</ul>
+    <ul class="drop-down__items">
+      <slot name="items" />
+    </ul>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  name: "DropDown",
+};
 </script>
 <style lang="scss" scoped>
 @import "../../../scss/variables";
@@ -18,10 +20,10 @@ export default {}
   padding: 10px 18px;
 
   &__border {
-	width: 100%;
-	height: 1px;
-	background-color: lighten($abs-light-bg, 10%);
-	margin: 5px 0;
+    width: 100%;
+    height: 1px;
+    background-color: lighten($abs-light-bg, 10%);
+    margin: 5px 0;
   }
 }
 </style>

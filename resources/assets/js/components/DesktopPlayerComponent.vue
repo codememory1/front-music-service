@@ -51,9 +51,10 @@
   </div>
 </template>
 <script>
-import ProgressBar from "./ProgressBarComponent";
+import ProgressBar from "./BaseRangeComponent";
 
 export default {
+  name: "DesktopPlayer",
   components: {
     ProgressBar,
   },

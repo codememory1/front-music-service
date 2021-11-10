@@ -1,77 +1,84 @@
 <template>
   <div class="navigation">
-	<div class="navigation__content">
-	  <div
-		   class="navigation__border-top"
-		   :style="'left:' + (itemWithInPercent * getActiveItemIndex) + '%;width:' + itemWithInPercent + '%'"
-	  ></div>
-	  <div
-		   class="navigation__item"
-		   v-for="(item, index) in items"
-		   :class="{'active' : index === getActiveItemIndex}"
-		   :style="'width:' + itemWithInPercent + '%'"
-		   @click="clickByItem(index)"
-	  >
-		<inline-svg :src="item.svg"/>
-		<span>{{ item.name }}</span>
-	  </div>
-	</div>
+    <div class="navigation__content">
+      <div
+        class="navigation__border-top"
+        :style="
+          'left:' +
+          itemWithInPercent * getActiveItemIndex +
+          '%;width:' +
+          itemWithInPercent +
+          '%'
+        "
+      ></div>
+      <div
+        class="navigation__item"
+        v-for="(item, index) in items"
+        :key="index"
+        :class="{ active: index === getActiveItemIndex }"
+        :style="'width:' + itemWithInPercent + '%'"
+        @click="clickByItem(index)"
+      >
+        <inline-svg :src="item.svg" />
+        <span>{{ item.name }}</span>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
   props: {
-	/**
-	 * An array of items whose object contains two keys {svg, name}
-	 *
-	 * @type {Array}
-	 */
-	items: {
-	  type: Array,
-	  required: true
-	},
+    /**
+     * An array of items whose object contains two keys {svg, name}
+     *
+     * @type {Array}
+     */
+    items: {
+      type: Array,
+      required: true,
+    },
 
-	/**
-	 * Index of active item
-	 *
-	 * @type{Number}
-	 */
-	activeItemIndex: {
-	  type: Number,
-	  default: 1,
-	  required: false
-	}
+    /**
+     * Index of active item
+     *
+     * @type{Number}
+     */
+    activeItemIndex: {
+      type: Number,
+      default: 1,
+      required: false,
+    },
   },
 
   data: () => ({
-	mutableActiveItemIndex: null,
-	itemWithInPercent: 0
+    mutableActiveItemIndex: null,
+    itemWithInPercent: 0,
   }),
 
   created() {
-	this.mutableActiveItemIndex = this.activeItemIndex;
-	this.itemWithInPercent = 100 / this.items.length;
+    this.mutableActiveItemIndex = this.activeItemIndex;
+    this.itemWithInPercent = 100 / this.items.length;
   },
 
   computed: {
-	getActiveItemIndex() {
-	  return this.mutableActiveItemIndex - 1;
-	}
+    getActiveItemIndex() {
+      return this.mutableActiveItemIndex - 1;
+    },
   },
 
   methods: {
-	/**
-	 * Event handler for some navigation element
-	 *
-	 * @param index
-	 */
-	clickByItem(index) {
-	  this.mutableActiveItemIndex = index + 1;
+    /**
+     * Event handler for some navigation element
+     *
+     * @param index
+     */
+    clickByItem(index) {
+      this.mutableActiveItemIndex = index + 1;
 
-	  this.$emit('itemSelection', this.mutableActiveItemIndex);
-	}
-  }
-}
+      this.$emit("itemSelection", this.mutableActiveItemIndex);
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
 @import "../../../scss/components/mobileNavigationBar";

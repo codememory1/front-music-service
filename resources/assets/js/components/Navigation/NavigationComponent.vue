@@ -1,15 +1,17 @@
 <template>
   <div class="navigation">
     <div class="navigation__logo">
-      <img src="/public/images/logo.png" alt="logo">
+      <img src="/public/images/logo.png" alt="logo" />
     </div>
     <div class="navigation__categories">
-      <slot name="categories"/>
+      <slot name="categories" />
     </div>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  name: "Navigation"
+};
 </script>
 <style lang="scss" scoped>
 @import "../../../scss/variables";

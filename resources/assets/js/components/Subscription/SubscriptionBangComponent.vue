@@ -1,40 +1,42 @@
 <template>
   <div class="subscription__bang" :style="bangStyles">
-	<span>{{ title }}</span>
+    <span>{{ title }}</span>
   </div>
 </template>
 <script>
 export default {
+  name: "BaseSubscription",
   props: {
-	/**
-	 * Subscription Bang Name
-	 *
-	 * @type {String}
-	 */
-	title: {
-	  type: String,
-	  required: false
-	},
+    /**
+     * Subscription Bang Name
+     *
+     * @type {String}
+     */
+    title: {
+      type: String,
+      default: "",
+      required: false,
+    },
 
-	/**
-	 * Bangs background color
-	 *
-	 * @type String
-	 */
-	background: {
-	  type: String,
-	  required: false
-	}
+    /**
+     * Bangs background color
+     *
+     * @type String
+     */
+    background: {
+      type: String,
+      default: "",
+      required: false,
+    },
   },
-
   computed: {
-	bangStyles() {
-	  return {
-		backgroundColor: this.background
-	  };
-	}
-  }
-}
+    bangStyles() {
+      return {
+        backgroundColor: this.background,
+      };
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
 .subscription__bang {
@@ -48,10 +50,10 @@ export default {
   width: 100%;
 
   span {
-	text-transform: uppercase;
-	color: #fff;
-	font-size: 12px;
-	font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
   }
 }
 </style>

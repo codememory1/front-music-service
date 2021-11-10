@@ -3,8 +3,8 @@
 </template>
 <script>
 export default {
-  name: 'drop-down-border'
-}
+  name: "DropDownBorder",
+};
 </script>
 <style lang="scss" scoped>
 @import "../../../scss/variables";

@@ -1,55 +1,64 @@
 <template>
   <div class="music-item">
-	<div class="music-item__left-info">
-	  <img class="music-item__image" :src="image" :alt="name">
-	  <div class="music-item__names">
-		<span class="music-item__name">{{ name }}</span>
-		<span class="music-item__author">{{ author }}</span>
-	  </div>
-	</div>
-	<div class="music-item__right-info">
-	  <span class="music-item__time">03:20</span>
-	  <div class="music-item__buttons">
-		<img class="music-item__button--like" src="public/images/icons/like.svg" alt="like">
-		<img class="music-item__button--actions" src="public/images/icons/vertical-ellipses.svg" alt="actions">
-	  </div>
-	</div>
+    <div class="music-item__left-info">
+      <img class="music-item__image" :src="image" :alt="name" />
+      <div class="music-item__names">
+        <span class="music-item__name">{{ name }}</span>
+        <span class="music-item__author">{{ author }}</span>
+      </div>
+    </div>
+    <div class="music-item__right-info">
+      <span class="music-item__time">03:20</span>
+      <div class="music-item__buttons">
+        <img
+          class="music-item__button--like"
+          src="public/images/icons/like.svg"
+          alt="like"
+        />
+        <img
+          class="music-item__button--actions"
+          src="public/images/icons/vertical-ellipses.svg"
+          alt="actions"
+        />
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
+  name: "MusicItem",
   props: {
-	/**
-	 * Music image
-	 *
-	 * @type {String}
-	 */
-	image: {
-	  type: String,
-	  required: true
-	},
+    /**
+     * Music image
+     *
+     * @type {String}
+     */
+    image: {
+      type: String,
+      required: true,
+    },
 
-	/**
-	 * Full name of the music
-	 *
-	 * @type {String}
-	 */
-	name: {
-	  type: String,
-	  required: true
-	},
+    /**
+     * Full name of the music
+     *
+     * @type {String}
+     */
+    name: {
+      type: String,
+      required: true,
+    },
 
-	/**
-	 * Music author
-	 *
-	 * @type {String}
-	 */
-	author: {
-	  type: String,
-	  required: true
-	}
-  }
-}
+    /**
+     * Music author
+     *
+     * @type {String}
+     */
+    author: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 <style scoped>
 .music-item {
@@ -63,7 +72,7 @@ export default {
 }
 
 .music-item:hover {
-  background-color: #0C1A2C;
+  background-color: #0c1a2c;
 }
 
 .music-item__left-info {
