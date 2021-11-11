@@ -5,11 +5,13 @@ import router from "./routes/router";
 
 // Import plugins
 import AxiosInstance from "./plugins/AxiosInstance";
-
-// Import components
+import IsEmpty from "./plugins/IsEmpty";
+import Storage from "./plugins/Storage";
 
 Vue.use(AxiosInstance);
 Vue.use(TouchEvents);
+Vue.use(IsEmpty);
+Vue.use(Storage);
 
 Vue.component("InlineSvg", InlineSvg);
 
