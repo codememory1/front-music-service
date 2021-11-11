@@ -15,7 +15,7 @@
 </template>
 <script>
 export default {
-  name: "Modal",
+  name: "BaseModal",
   props: {
     /**
      * Whether to allow scroll body when modal is open
