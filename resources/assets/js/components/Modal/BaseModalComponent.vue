@@ -1,6 +1,10 @@
 <template>
-  <div class="modal" :class="{ active: isOpen }">
-    <div class="modal__bg" @click="close"></div>
+  <div
+    ref="modal"
+    class="modal"
+    :class="{ active: isOpen }"
+    @click="closeOutContainer"
+  >
     <div class="modal__container">
       <div class="modal__content">
         <div class="modal__close">
@@ -31,20 +35,29 @@ export default {
   data: () => ({
     isOpen: false,
   }),
-  mounted() {
-    if (this.bodyScroll && this.isOpen) {
-      document.body.style.overflow = "hidden";
-    }
-  },
   methods: {
+    closeOutContainer(event) {
+      if (event.target.contains(this.$refs.modal)) {
+        this.close();
+      }
+    },
+
     open() {
       this.isOpen = true;
+
+      if (!this.bodyScroll) {
+        document.body.style.overflow = "hidden";
+      }
 
       this.$emit("open");
     },
 
     close() {
       this.isOpen = false;
+
+      if (!this.bodyScroll) {
+        document.body.style.overflow = "auto";
+      }
 
       this.$emit("close");
     },
