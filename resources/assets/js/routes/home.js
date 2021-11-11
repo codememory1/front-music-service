@@ -6,8 +6,4 @@ export const routes = [
     path: "/",
     component: IndexView,
   },
-  {
-    path: "/test",
-    component: TestView,
-  },
 ];
