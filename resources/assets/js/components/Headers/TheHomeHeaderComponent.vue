@@ -6,6 +6,10 @@
         $refs.authModal.close();
         $refs.registerModal.open();
       "
+      @openPasswordRecoveryModal="
+        $refs.authModal.close();
+        $refs.passwordRecoveryModal.open();
+      "
     />
     <register-modal
       ref="registerModal"
@@ -14,6 +18,11 @@
         $refs.authModal.open();
       "
     />
+    <password-recovery-modal
+      ref="passwordRecoveryModal"
+      @recovery="recoveryPassword"
+    />
+    <change-password-modal ref="changePasswordModal" />
     <div class="container">
       <div class="header__navbar">
         <div class="header__logo">
@@ -83,6 +92,8 @@
 import BaseCustomSelect from "../../components/Select/BaseSelectComponent";
 import AuthModal from "../../components/Modal/AuthModalComponent";
 import RegisterModal from "../../components/Modal/RegisterModalComponent";
+import PasswordRecoveryModal from "../../components/Modal/PasswordRecoveryModalComponent";
+import ChangePasswordModal from "../../components/Modal/ChangePasswordModalComponent";
 
 export default {
   name: "TheHomeHeader",
@@ -90,6 +101,14 @@ export default {
     BaseCustomSelect,
     AuthModal,
     RegisterModal,
+    PasswordRecoveryModal,
+    ChangePasswordModal,
+  },
+  methods: {
+    recoveryPassword() {
+      this.$refs.passwordRecoveryModal.close();
+      this.$refs.changePasswordModal.open();
+    },
   },
 };
 </script>
