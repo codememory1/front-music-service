@@ -56,13 +56,15 @@
       <div class="text-after-button">
         <p>
           Don't have an account?
-          <span tabindex="0" @click.prevent="$emit('openRegisterModal')">
+          <span tabindex="0" @click="$emit('openRegisterModal')">
             Create an account
           </span>
         </p>
         <p>
           Forgot your password?
-          <span tabindex="0">Restore password</span>
+          <span tabindex="0" @click="$emit('openPasswordRecoveryModal')">
+            Restore password
+          </span>
         </p>
       </div>
     </template>
