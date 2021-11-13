@@ -38,19 +38,4 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../../scss/components/security";
-
-.security__modal {
-  &_title {
-    color: #fff;
-    font-size: 25px;
-    font-weight: 500;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  &_content {
-    padding: 0 80px;
-  }
-}
 </style>

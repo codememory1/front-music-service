@@ -24,15 +24,13 @@
       >
         <!-- Form Fields START -->
         <security-form-field
-          :label="'Email | Username'"
+          :label="'Login'"
           :icon-class="'fa-user'"
-          :class="{ active: !isEmpty(username) }"
-          v-model="username"
+          v-model="login"
         />
         <security-form-field
-          :label="'Email | Username'"
+          :label="'Password'"
           :icon-class="'fa-key'"
-          :class="{ active: !isEmpty(password) }"
           :type="'password'"
           v-model="password"
         />
@@ -44,7 +42,7 @@
             type="checkbox"
             class="checkbox"
             id="remember-data"
-            v-model="remember"
+            @input="remember = !remember"
           />
           <label for="remember-data">Remember on this device</label>
         </div>
@@ -58,11 +56,13 @@
       <div class="text-after-button">
         <p>
           Don't have an account?
-          <a href="#">Create an account</a>
+          <span tabindex="0" @click.prevent="$emit('openRegisterModal')">
+            Create an account
+          </span>
         </p>
         <p>
           Forgot your password?
-          <a href="#">Restore password</a>
+          <span tabindex="0">Restore password</span>
         </p>
       </div>
     </template>
@@ -82,21 +82,24 @@ export default {
     SecurityFormField,
   },
   data: () => ({
-    username: null,
+    login: null,
     password: null,
     remember: false,
   }),
   created() {
-    this.username = this.$storage.getByKey("auth_data", "username");
+    this.login = this.$storage.getByKey("auth_data", "login");
   },
   methods: {
     open() {
       this.$refs.securityModal.open();
     },
+    close() {
+      this.$refs.securityModal.close();
+    },
     signIn() {
       if (this.remember) {
         this.$storage.create("auth_data", {
-          username: this.username,
+          login: this.login,
         });
       }
     },
@@ -153,10 +156,6 @@ export default {
   }
 }
 
-::v-deep .modal__container {
-  height: max-content;
-}
-
 .remember-data__wrap {
   display: flex;
   cursor: pointer;
@@ -184,8 +183,14 @@ export default {
     text-align: center;
     margin: 7px 0;
 
-    a {
+    span {
       color: $accent;
+      transition: color 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        color: darken($accent, 10%);
+      }
     }
   }
 }

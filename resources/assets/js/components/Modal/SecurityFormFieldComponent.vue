@@ -1,5 +1,5 @@
 <template>
-  <div class="security__form_field">
+  <div class="security__form_field" :class="{ active: !isEmpty(value) }">
     <label :for="id">{{ label }}</label>
     <input
       :type="type"
