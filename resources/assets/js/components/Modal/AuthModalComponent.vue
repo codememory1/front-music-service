@@ -81,12 +81,12 @@ export default {
   components: {
     SecurityModal,
     SecurityModalForm,
-    SecurityFormField,
+    SecurityFormField
   },
   data: () => ({
     login: null,
     password: null,
-    remember: false,
+    remember: false
   }),
   created() {
     this.login = this.$storage.getByKey("auth_data", "login");
@@ -101,11 +101,11 @@ export default {
     signIn() {
       if (this.remember) {
         this.$storage.create("auth_data", {
-          login: this.login,
+          login: this.login
         });
       }
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

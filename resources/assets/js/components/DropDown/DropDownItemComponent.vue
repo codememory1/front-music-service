@@ -4,7 +4,7 @@
     :class="{
       multiple: isMultiple,
       disabled: isDisabled,
-      is_link: link === null,
+      is_link: link === null
     }"
     @click="$emit('click')"
   >
@@ -27,7 +27,7 @@ export default {
     link: {
       type: String,
       default: null,
-      required: false,
+      required: false
     },
 
     /**
@@ -38,7 +38,7 @@ export default {
     isMultiple: {
       type: Boolean,
       default: false,
-      required: false,
+      required: false
     },
 
     /**
@@ -49,7 +49,7 @@ export default {
     isDisabled: {
       type: Boolean,
       default: false,
-      required: false,
+      required: false
     },
 
     /**
@@ -59,9 +59,9 @@ export default {
      */
     label: {
       type: String,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

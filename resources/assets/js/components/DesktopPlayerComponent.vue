@@ -56,8 +56,8 @@ import ProgressBar from "./BaseRangeComponent";
 export default {
   name: "DesktopPlayer",
   components: {
-    ProgressBar,
-  },
+    ProgressBar
+  }
 };
 </script>
 <style lang="scss" scoped>

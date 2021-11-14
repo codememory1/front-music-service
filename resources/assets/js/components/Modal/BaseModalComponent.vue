@@ -29,11 +29,11 @@ export default {
     bodyScroll: {
       type: Boolean,
       default: false,
-      required: false,
-    },
+      required: false
+    }
   },
   data: () => ({
-    isOpen: false,
+    isOpen: false
   }),
   methods: {
     closeOutContainer(event) {
@@ -41,7 +41,6 @@ export default {
         this.close();
       }
     },
-
     open() {
       this.isOpen = true;
 
@@ -51,7 +50,6 @@ export default {
 
       this.$emit("open");
     },
-
     close() {
       this.isOpen = false;
 
@@ -60,8 +58,8 @@ export default {
       }
 
       this.$emit("close");
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss">

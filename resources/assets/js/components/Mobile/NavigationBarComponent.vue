@@ -35,7 +35,7 @@ export default {
      */
     items: {
       type: Array,
-      required: true,
+      required: true
     },
 
     /**
@@ -46,13 +46,13 @@ export default {
     activeItemIndex: {
       type: Number,
       default: 1,
-      required: false,
-    },
+      required: false
+    }
   },
 
   data: () => ({
     mutableActiveItemIndex: null,
-    itemWithInPercent: 0,
+    itemWithInPercent: 0
   }),
 
   created() {
@@ -63,7 +63,7 @@ export default {
   computed: {
     getActiveItemIndex() {
       return this.mutableActiveItemIndex - 1;
-    },
+    }
   },
 
   methods: {
@@ -76,8 +76,8 @@ export default {
       this.mutableActiveItemIndex = index + 1;
 
       this.$emit("itemSelection", this.mutableActiveItemIndex);
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

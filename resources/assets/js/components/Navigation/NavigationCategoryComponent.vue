@@ -19,9 +19,9 @@ export default {
      */
     title: {
       type: String,
-      required: false,
-    },
-  },
+      required: false
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

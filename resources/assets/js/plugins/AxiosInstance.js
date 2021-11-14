@@ -11,8 +11,8 @@ export default {
       headers: {
         Authorization: `Bearer ${Vue.$cookies.get(
           ConfigModule.auth_cookie_name
-        )}`,
-      },
+        )}`
+      }
     });
-  },
+  }
 };

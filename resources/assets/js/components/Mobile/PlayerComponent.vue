@@ -27,7 +27,7 @@ export default {
      */
     name: {
       type: String,
-      require: true,
+      require: true
     },
 
     /**
@@ -37,7 +37,7 @@ export default {
      */
     author: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -47,9 +47,9 @@ export default {
      */
     image: {
       type: String,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

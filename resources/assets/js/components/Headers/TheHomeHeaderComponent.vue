@@ -61,12 +61,12 @@
               :options="[
                 {
                   label: 'English',
-                  value: 'en',
+                  value: 'en'
                 },
                 {
                   label: 'Russian',
-                  value: 'ru',
-                },
+                  value: 'ru'
+                }
               ]"
             />
           </div>
@@ -102,13 +102,13 @@ export default {
     AuthModal,
     RegisterModal,
     PasswordRecoveryModal,
-    ChangePasswordModal,
+    ChangePasswordModal
   },
   methods: {
     recoveryPassword() {
       this.$refs.passwordRecoveryModal.close();
       this.$refs.changePasswordModal.open();
-    },
-  },
+    }
+  }
 };
 </script>

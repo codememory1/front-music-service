@@ -16,7 +16,7 @@ import BaseButton from "../BaseButton";
 export default {
   name: "SecurityModalForm",
   components: {
-    BaseButton,
+    BaseButton
   },
   props: {
     /**
@@ -26,9 +26,9 @@ export default {
      */
     buttonLabel: {
       type: String,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

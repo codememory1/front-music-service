@@ -58,13 +58,13 @@ export default {
   components: {
     SecurityModal,
     SecurityModalForm,
-    SecurityFormField,
+    SecurityFormField
   },
   data: () => ({
     name: null,
     email: null,
     password: null,
-    repeatPassword: null,
+    repeatPassword: null
   }),
   methods: {
     open() {
@@ -72,8 +72,8 @@ export default {
     },
     close() {
       this.$refs.securityModal.close();
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -93,7 +93,7 @@ export default {
     span {
       color: $accent;
       transition: color 0.2s ease-in-out;
-	  cursor: pointer;
+      cursor: pointer;
 
       &:hover {
         color: darken($accent, 10%);

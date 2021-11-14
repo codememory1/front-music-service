@@ -19,5 +19,5 @@ Vue.productionTip = false;
 
 new Vue({
   el: "#app",
-  router,
+  router
 });

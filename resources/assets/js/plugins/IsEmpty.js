@@ -3,5 +3,5 @@ export default {
     Vue.prototype.isEmpty = function isEmpty(value) {
       return null === value || "" === value;
     };
-  },
+  }
 };

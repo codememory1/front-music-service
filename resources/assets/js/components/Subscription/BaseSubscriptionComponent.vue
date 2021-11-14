@@ -44,7 +44,7 @@ export default {
      */
     id: {
       type: Number,
-      required: true,
+      required: true
     },
 
     /**
@@ -54,7 +54,7 @@ export default {
      */
     title: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -64,7 +64,7 @@ export default {
      */
     miniDesc: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -74,7 +74,7 @@ export default {
      */
     oldPrice: {
       type: Number,
-      required: false,
+      required: false
     },
 
     /**
@@ -84,7 +84,7 @@ export default {
      */
     price: {
       type: Number,
-      required: true,
+      required: true
     },
 
     /**
@@ -94,7 +94,7 @@ export default {
      */
     isValid: {
       type: Number,
-      required: true,
+      required: true
     },
 
     /**
@@ -104,7 +104,7 @@ export default {
      */
     options: {
       type: Array,
-      required: true,
+      required: true
     },
 
     /**
@@ -114,8 +114,8 @@ export default {
      */
     background: {
       type: String,
-      required: false,
-    },
+      required: false
+    }
   },
 
   computed: {
@@ -124,10 +124,10 @@ export default {
         backgroundColor:
           undefined !== this.background
             ? HexToRgba(this.background, 0.1)
-            : undefined,
+            : undefined
       };
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

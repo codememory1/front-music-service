@@ -62,7 +62,7 @@
                 active: selected.includes(option.value),
                 disabled:
                   maxSelections === selected.length &&
-                  !selected.includes(option.value),
+                  !selected.includes(option.value)
               }"
               @click="clickByOption(option)"
             >
@@ -86,7 +86,7 @@ export default {
      */
     placeholder: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -97,7 +97,7 @@ export default {
      */
     options: {
       type: Array,
-      required: true,
+      required: true
     },
 
     /**
@@ -108,7 +108,7 @@ export default {
     selectedOptions: {
       type: Array,
       default: () => [],
-      required: false,
+      required: false
     },
 
     /**
@@ -119,7 +119,7 @@ export default {
     withSearch: {
       type: Boolean,
       default: false,
-      required: false,
+      required: false
     },
 
     /**
@@ -130,7 +130,7 @@ export default {
     multiple: {
       type: Boolean,
       default: false,
-      required: false,
+      required: false
     },
 
     /**
@@ -140,8 +140,8 @@ export default {
      */
     maxSelections: {
       type: Number,
-      required: false,
-    },
+      required: false
+    }
   },
 
   data: () => ({
@@ -150,7 +150,7 @@ export default {
     modifiableOptions: [],
     rectListOptions: null,
     rectBody: null,
-    listOptionsIsTop: false,
+    listOptionsIsTop: false
   }),
 
   created() {
@@ -174,7 +174,7 @@ export default {
      */
     getOptions() {
       return this.getOptionsFrom(this.modifiableOptions);
-    },
+    }
   },
 
   methods: {
@@ -309,8 +309,8 @@ export default {
           this.selected.splice(indexOfSelected, 1);
         }
       }
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

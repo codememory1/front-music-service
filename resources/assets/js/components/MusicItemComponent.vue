@@ -35,7 +35,7 @@ export default {
      */
     image: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -45,7 +45,7 @@ export default {
      */
     name: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -55,9 +55,9 @@ export default {
      */
     author: {
       type: String,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 <style scoped>

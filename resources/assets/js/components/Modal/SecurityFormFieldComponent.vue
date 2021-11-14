@@ -23,7 +23,7 @@ export default {
      */
     label: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -33,7 +33,7 @@ export default {
      */
     iconClass: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -44,25 +44,25 @@ export default {
     type: {
       type: String,
       default: "text",
-      required: false,
+      required: false
     },
 
     value: {
       type: [String, Number],
       default: null,
-      required: false,
-    },
+      required: false
+    }
   },
   model: {
     prop: "value",
-    event: "input",
+    event: "input"
   },
   data: () => ({
-    id: null,
+    id: null
   }),
   created() {
     this.id = generateRandomString();
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>

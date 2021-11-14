@@ -17,7 +17,7 @@ export default {
      */
     svg: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -27,7 +27,7 @@ export default {
      */
     label: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -37,7 +37,7 @@ export default {
      */
     link: {
       type: String,
-      required: false,
+      required: false
     },
 
     /**
@@ -48,9 +48,9 @@ export default {
     isActive: {
       type: Boolean,
       default: false,
-      required: false,
-    },
-  },
+      required: false
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

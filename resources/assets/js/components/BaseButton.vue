@@ -7,9 +7,9 @@ export default {
   props: {
     value: {
       type: String,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 <style lang="scss">
@@ -28,7 +28,7 @@ export default {
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
-	background-color: darken($accent, 10%);
+    background-color: darken($accent, 10%);
   }
 }
 </style>

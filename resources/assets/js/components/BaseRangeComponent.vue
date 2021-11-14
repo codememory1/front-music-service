@@ -16,7 +16,7 @@ import VueSlider from "vue-slider-component";
 export default {
   name: "BaseRange",
   components: {
-    VueSlider,
+    VueSlider
   },
   props: {
     /**
@@ -27,7 +27,7 @@ export default {
     defaultValue: {
       type: [Number, Array],
       default: 0,
-      required: false,
+      required: false
     },
 
     /**
@@ -39,7 +39,7 @@ export default {
     multipleCross: {
       type: Boolean,
       default: true,
-      required: false,
+      required: false
     },
 
     /**
@@ -50,7 +50,7 @@ export default {
     min: {
       type: Number,
       default: 0,
-      required: false,
+      required: false
     },
 
     /**
@@ -61,7 +61,7 @@ export default {
     max: {
       type: Number,
       default: 100,
-      required: false,
+      required: false
     },
 
     /**
@@ -72,7 +72,7 @@ export default {
     steep: {
       type: Number,
       default: 1,
-      required: false,
+      required: false
     },
 
     /**
@@ -83,7 +83,7 @@ export default {
     enabledTooltip: {
       type: Boolean,
       default: false,
-      required: false,
+      required: false
     },
 
     /**
@@ -95,7 +95,7 @@ export default {
     tooltipType: {
       type: String,
       default: "active",
-      required: false,
+      required: false
     },
 
     /**
@@ -107,7 +107,7 @@ export default {
     tooltipPositions: {
       type: Array,
       default: () => ["top"],
-      required: false,
+      required: false
     },
 
     /**
@@ -118,12 +118,12 @@ export default {
     tooltipFormat: {
       type: String,
       default: "{value}",
-      required: false,
-    },
+      required: false
+    }
   },
   data: () => ({
     value: 0,
-    mutatedTooltipPositions: [],
+    mutatedTooltipPositions: []
   }),
   created() {
     this.value = this.defaultValue;
@@ -142,7 +142,7 @@ export default {
         );
       }
     }
-  },
+  }
 };
 </script>
 <style lang="scss">

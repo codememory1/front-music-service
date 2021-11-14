@@ -24,10 +24,10 @@ export default {
   components: {
     SecurityModal,
     SecurityModalForm,
-    SecurityFormField,
+    SecurityFormField
   },
   data: () => ({
-    email: null,
+    email: null
   }),
   methods: {
     open() {
@@ -35,7 +35,7 @@ export default {
     },
     close() {
       this.$refs.securityModal.close();
-    },
-  },
+    }
+  }
 };
 </script>

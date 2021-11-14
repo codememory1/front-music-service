@@ -38,7 +38,7 @@ export default {
     type: {
       type: String,
       default: "success",
-      required: false,
+      required: false
     },
 
     /**
@@ -48,7 +48,7 @@ export default {
      */
     title: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -58,9 +58,9 @@ export default {
      */
     message: {
       type: String,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

@@ -31,5 +31,5 @@ class Storage {
 export default {
   install(Vue) {
     Vue.prototype.$storage = new Storage();
-  },
+  }
 };

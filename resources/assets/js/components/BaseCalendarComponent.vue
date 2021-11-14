@@ -61,7 +61,7 @@ export default {
     activeYear: {
       type: Number,
       default: new Date().getFullYear(),
-      required: false,
+      required: false
     },
 
     /**
@@ -72,7 +72,7 @@ export default {
     activeMonth: {
       type: Number,
       default: new Date().getMonth() + 1,
-      required: false,
+      required: false
     },
 
     /**
@@ -83,8 +83,8 @@ export default {
     activeDay: {
       type: Number,
       default: new Date().getDate(),
-      required: false,
-    },
+      required: false
+    }
   },
 
   data: () => ({
@@ -101,14 +101,14 @@ export default {
       "September",
       "October",
       "November",
-      "December",
+      "December"
     ],
     displayedData: {
       year: null,
       month: null,
-      day: null,
+      day: null
     },
-    startedFromWeek: 1,
+    startedFromWeek: 1
   }),
 
   created() {
@@ -231,8 +231,8 @@ export default {
      */
     cancel() {
       this.$emit("cancel", this);
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

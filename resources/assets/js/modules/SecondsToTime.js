@@ -15,6 +15,6 @@ export default function (time) {
     days: days.toString(),
     hours: hours.toString(),
     minutes: minutes.toString(),
-    seconds: seconds.toString(),
+    seconds: seconds.toString()
   };
 }

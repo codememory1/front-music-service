@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "DropDownBorder",
+  name: "DropDownBorder"
 };
 </script>
 <style lang="scss" scoped>

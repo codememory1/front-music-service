@@ -108,7 +108,7 @@
               '5 Watchlists included',
               '10+ exclusive premium widgets',
               'Priority support',
-              'Another great feature',
+              'Another great feature'
             ]"
           />
           <base-subscription
@@ -123,7 +123,7 @@
               '5 Watchlists included',
               '10+ exclusive premium widgets',
               'Priority support',
-              'Another great feature',
+              'Another great feature'
             ]"
             :background="'#3C56D6'"
           >
@@ -146,7 +146,7 @@
               '5 Watchlists included',
               '10+ exclusive premium widgets',
               'Priority support',
-              'Another great feature',
+              'Another great feature'
             ]"
           />
         </div>
@@ -169,8 +169,8 @@ export default {
     TheHomeHeader,
     BaseSubscription,
     SubscriptionBang,
-    TheFooter,
-  },
+    TheFooter
+  }
 };
 </script>
 <style lang="scss">

@@ -13,7 +13,7 @@ import BaseModal from "../../components/Modal/BaseModalComponent";
 
 export default {
   components: {
-    BaseModal,
+    BaseModal
   },
   props: {
     /**
@@ -23,8 +23,8 @@ export default {
      */
     title: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   methods: {
     open() {
@@ -32,8 +32,8 @@ export default {
     },
     close() {
       this.$refs.modal.close();
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

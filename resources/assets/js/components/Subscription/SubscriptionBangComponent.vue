@@ -15,7 +15,7 @@ export default {
     title: {
       type: String,
       default: "",
-      required: false,
+      required: false
     },
 
     /**
@@ -26,16 +26,16 @@ export default {
     background: {
       type: String,
       default: "",
-      required: false,
-    },
+      required: false
+    }
   },
   computed: {
     bangStyles() {
       return {
-        backgroundColor: this.background,
+        backgroundColor: this.background
       };
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

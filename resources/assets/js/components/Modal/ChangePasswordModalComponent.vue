@@ -1,5 +1,6 @@
 <template>
   <security-modal ref="securityModal" :title="'Password Recovery'">
+    <!-- Code entry fields START -->
     <template v-slot:contentAfterTitle>
       <div class="code__items">
         <div
@@ -17,6 +18,9 @@
         </div>
       </div>
     </template>
+    <!-- Code entry fields END -->
+
+    <!-- Form START -->
     <template v-slot:form>
       <security-modal-form :button-label="'Change password'">
         <security-form-field
@@ -31,6 +35,7 @@
         />
       </security-modal-form>
     </template>
+    <!-- Form END -->
   </security-modal>
 </template>
 <script>
@@ -43,13 +48,13 @@ export default {
   components: {
     SecurityModal,
     SecurityModalForm,
-    SecurityFormField,
+    SecurityFormField
   },
   data: () => ({
     password: null,
     repeatPassword: null,
     code: [null, null, null, null, null, null],
-    activeIndexCode: null,
+    activeIndexCode: null
   }),
   methods: {
     open() {
@@ -76,8 +81,8 @@ export default {
 
         this.$refs.item[this.activeIndexCode]?.focus();
       }
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

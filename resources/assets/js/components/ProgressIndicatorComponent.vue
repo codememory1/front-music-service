@@ -7,7 +7,7 @@
         :key="index"
         :class="{
           active: index <= getActiveIndex,
-          next: index === getActiveIndex + 1,
+          next: index === getActiveIndex + 1
         }"
         @click="$emit('click', index + 1, labels[index])"
       >
@@ -28,7 +28,7 @@ export default {
      */
     labels: {
       type: Array,
-      required: true,
+      required: true
     },
 
     /**
@@ -39,15 +39,15 @@ export default {
     activeIndex: {
       type: Number,
       default: 1,
-      required: false,
-    },
+      required: false
+    }
   },
 
   computed: {
     getActiveIndex() {
       return this.activeIndex - 1;
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

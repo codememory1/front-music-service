@@ -1,17 +1,25 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
+    node: true
   },
   extends: [
     "plugin:vue/essential",
     "plugin:prettier/recommended",
-    "eslint:recommended",
+    "eslint:recommended"
   ],
   parserOptions: {
     sourceType: "module",
     allowImportExportEverywhere: false,
-    codeFrame: true,
+    codeFrame: true
   },
-  rules: {},
+  rules: {
+    "comma-dangle": ["error", "never"],
+    "prettier/prettier": [
+      "error",
+      {
+        trailingComma: "none"
+      }
+    ]
+  }
 };
