@@ -37,6 +37,7 @@ export default {
      */
     link: {
       type: String,
+      default: "",
       required: false
     },
 
