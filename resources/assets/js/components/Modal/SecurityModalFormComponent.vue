@@ -2,21 +2,22 @@
   <form class="security__form" @submit.prevent>
     <slot />
     <div class="security__button_wrap">
-      <base-button
-        :value="buttonLabel"
-        :class="'security__button'"
+      <base-form-button
+        :class="'security__button accent'"
         @click="$emit('click')"
-      />
+      >
+        {{ buttonLabel }}
+      </base-form-button>
     </div>
   </form>
 </template>
 <script>
-import BaseButton from "../BaseButton";
+import BaseFormButton from "../Buttons/BaseFormButtonComponent";
 
 export default {
   name: "SecurityModalForm",
   components: {
-    BaseButton
+    BaseFormButton
   },
   props: {
     /**
@@ -40,5 +41,7 @@ export default {
 
 .security__button {
   border-radius: 60px;
+  padding: 14px 30px;
+  font-weight: 500;
 }
 </style>
