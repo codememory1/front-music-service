@@ -21,17 +21,114 @@
         </div>
       </div>
     </div>
+    <div class="artist__albums">
+      <core-swiper ref="bestTracksSwiper" :options="swiperOptions">
+        <slide-swiper v-for="(track, index) in bestTracks" :key="index">
+          <base-album
+            :name="track.name"
+            :image="track.image"
+            :authors="track.authors"
+            :to="track.to"
+          />
+        </slide-swiper>
+      </core-swiper>
+    </div>
   </div>
 </template>
 <script>
 import BaseCustomClickButton from "../../components/Buttons/BaseCustomClickButtonComponent";
 import ShareButton from "../../components/Buttons/ShareButtonComponent";
+import BaseAlbum from "../../components/Albums/BaseAlbumComponent";
+import "swiper/css/swiper.css";
 
 export default {
   name: "ArtistView",
   components: {
     BaseCustomClickButton,
-    ShareButton
+    ShareButton,
+    BaseAlbum
+  },
+  data: () => ({
+    bestTracks: [
+      {
+        name: "NO MERCY",
+        image: "/public/images/album-image.png",
+        to: "",
+        authors: [
+          {
+            id: 1,
+            name: "Tvbuu"
+          }
+        ]
+      },
+      {
+        name: "NO MERCY",
+        image: "/public/images/album-image.png",
+        to: "",
+        authors: [
+          {
+            id: 1,
+            name: "Tvbuu"
+          }
+        ]
+      },
+      {
+        name: "NO MERCY",
+        image: "/public/images/album-image.png",
+        to: "",
+        authors: [
+          {
+            id: 1,
+            name: "Tvbuu"
+          }
+        ]
+      },
+      {
+        name: "NO MERCY",
+        image: "/public/images/album-image.png",
+        to: "",
+        authors: [
+          {
+            id: 1,
+            name: "Tvbuu"
+          }
+        ]
+      },
+      {
+        name: "NO MERCY",
+        image: "/public/images/album-image.png",
+        to: "",
+        authors: [
+          {
+            id: 1,
+            name: "Tvbuu"
+          }
+        ]
+      },
+      {
+        name: "NO MERCY",
+        image: "/public/images/album-image.png",
+        to: "",
+        authors: [
+          {
+            id: 1,
+            name: "Tvbuu"
+          }
+        ]
+      }
+    ],
+    swiperOptions: {
+      slidesPerView: 6
+    }
+  }),
+  computed: {
+    bestTracksSwiper() {
+      return this.$refs.bestTracksSwiper.$swiper;
+    }
+  },
+  mounted() {
+    console.log("Current Swiper instance object", this.swiper);
+    this.bestTracksSwiper.slideTo(3, 1000, false);
   }
 };
 </script>
@@ -82,6 +179,12 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__albums {
+    margin-top: 60px;
+    margin-left: $gutter;
+    margin-right: $gutter;
   }
 }
 

@@ -61,4 +61,8 @@ export default {
   height: 100%;
   overflow: auto;
 }
+
+.main__content {
+  margin-bottom: 30px;
+}
 </style>
