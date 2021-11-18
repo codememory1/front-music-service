@@ -3,13 +3,14 @@ import ArtistView from "../views/player/ArtistView";
 
 export const routes = [
   {
-    path: "*",
+    path: "/",
     component: PlayerLayout,
     name: "playerLayout",
     children: [
       {
-        path: ":id",
-        component: ArtistView
+        path: "artist/:id",
+        component: ArtistView,
+        name: "artist"
       }
     ]
   }
