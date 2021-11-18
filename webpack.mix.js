@@ -73,51 +73,51 @@ mix
     postCss: [
       require("postcss-preset-env"),
       require("autoprefixer")({
-        cascade: false,
+        cascade: false
       }),
       require("postcss-custom-properties"),
-      require("postcss-sort-media-queries"),
-    ],
+      require("postcss-sort-media-queries")
+    ]
   })
   .vue()
   .webpackConfig({
     mode: APP_MODE,
     resolve: {
       extensions: [".js", ".json", ".vue"],
-      alias: getWebpackAliases(),
+      alias: getWebpackAliases()
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: `${distPath}css/app.css`,
+        filename: `${distPath}css/app.css`
       }),
       new CopyPlugin({
-        patterns: [{ from: `${assetsPath}images`, to: `${distPath}images` }],
+        patterns: [{ from: `${assetsPath}images`, to: `${distPath}images` }]
       }),
       new ImageminWebpWebpackPlugin({
         config: [
           {
             test: /\.(jpe?g|png)/,
             options: {
-              quality: 75,
-            },
-          },
-        ],
+              quality: 75
+            }
+          }
+        ]
       }),
-      new VueLoaderPlugin(),
+      new VueLoaderPlugin()
     ],
     optimization: {
       minimize: APP_MODE !== "development",
       minimizer: [
         new TerserPlugin({
           test: /\.js$/,
-          extractComments: assetConfig.webpack.extractJsComments,
+          extractComments: assetConfig.webpack.extractJsComments
         }),
         new CssMinimizerPlugin({
           test: /.(css|scss|sass)/,
-          exclude: /(node_modules|bower_components)/,
-        }),
-      ],
-    },
+          exclude: /(node_modules|bower_components)/
+        })
+      ]
+    }
   })
   .then((stats) => {
     const jsonStats = stats.toJson();
@@ -134,6 +134,6 @@ mix
       message,
       icon: path.join(__dirname, "public/assets/images/codememory_icon.png"),
       sound: true,
-      wait: true,
+      wait: true
     });
   });
