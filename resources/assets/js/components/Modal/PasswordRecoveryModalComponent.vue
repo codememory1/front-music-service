@@ -26,13 +26,22 @@ export default {
     SecurityModalForm,
     SecurityFormField
   },
+
   data: () => ({
     email: null
   }),
+
   methods: {
+    /**
+     * Opening a window
+     */
     open() {
       this.$refs.securityModal.open();
     },
+
+    /**
+     * Closing the window
+     */
     close() {
       this.$refs.securityModal.close();
     }

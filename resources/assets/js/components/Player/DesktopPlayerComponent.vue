@@ -3,39 +3,39 @@
     <div class="player__controls-top">
       <div class="player__left-control">
         <div class="player__button">
-          <inline-svg src="public/images/icons/like.svg" />
+          <svg-alias :alias="'like-svg'" />
         </div>
         <div class="player__button">
-          <inline-svg src="public/images/icons/playlist.svg" />
+          <svg-alias :alias="'playlist-svg'" />
         </div>
         <div class="player__button">
-          <inline-svg src="public/images/icons/expand.svg" />
+          <svg-alias :alias="'expand-svg'" />
         </div>
       </div>
       <div class="player__center-control">
         <div class="repeat">
-          <inline-svg src="public/images/icons/repeat.svg" />
+          <svg-alias :alias="'repeat-svg'" />
         </div>
         <div class="prev">
-          <inline-svg src="public/images/icons/prev.svg" />
+          <svg-alias :alias="'prev-svg'" />
         </div>
         <div class="play-pause">
-          <inline-svg src="public/images/icons/pause.svg" />
+          <svg-alias :alias="'pause-svg'" />
         </div>
         <div class="next">
-          <inline-svg src="public/images/icons/next.svg" />
+          <svg-alias :alias="'next-svg'" />
         </div>
         <div class="shuffle">
-          <inline-svg src="public/images/icons/shuffle.svg" />
+          <svg-alias :alias="'shuffle-svg'" />
         </div>
       </div>
       <div class="player__right-control">
         <div class="min-volume">
-          <inline-svg src="public/images/icons/min-volume.svg" />
+          <svg-alias :alias="'min-volume-svg'" />
         </div>
         <progress-bar class="volume_progress" />
         <div class="max-volume">
-          <inline-svg src="public/images/icons/max-volume.svg" />
+          <svg-alias :alias="'max-volume-svg'" />
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
   </div>
 </template>
 <script>
-import ProgressBar from "./BaseRangeComponent";
+import ProgressBar from "../BaseRangeComponent";
 
 export default {
   name: "DesktopPlayer",
@@ -61,5 +61,5 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../../scss/components/player";
+@import "../../../scss/components/player";
 </style>

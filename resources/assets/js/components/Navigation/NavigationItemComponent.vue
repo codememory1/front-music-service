@@ -1,7 +1,7 @@
 <template>
   <li class="navigation__item" :class="{ active: isActive }">
     <router-link :to="link">
-      <inline-svg :src="svg" />
+      <svg-alias :alias="iconAlias" />
       {{ label }}
     </router-link>
   </li>
@@ -11,11 +11,11 @@ export default {
   name: "NavigationItem",
   props: {
     /**
-     * Path to svg icon
+     * Alias icon from modules/Aliases
      *
      * @type {String}
      */
-    svg: {
+    iconAlias: {
       type: String,
       required: true
     },
@@ -54,7 +54,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../../scss/variables";
 
 .navigation {

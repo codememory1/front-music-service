@@ -28,10 +28,7 @@
           placeholder
         }}</span>
         <div class="select__actions">
-          <inline-svg
-            class="select__arrow"
-            src="public/images/icons/arrow-right.svg"
-          />
+          <svg-alias :alias="'arrow-right-svg'" :class="'select__arrow'" />
         </div>
       </div>
       <!-- Selected options END -->
@@ -51,7 +48,7 @@
               placeholder="Search..."
               @input="search"
             />
-            <inline-svg src="public/images/icons/search.svg" />
+            <svg-alias :alias="'search-svg'" />
           </div>
           <ul class="options">
             <li
@@ -313,6 +310,6 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../../scss/components/select";
 </style>

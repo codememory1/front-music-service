@@ -19,7 +19,7 @@
         :style="'width:' + itemWithInPercent + '%'"
         @click="clickByItem(index)"
       >
-        <inline-svg :src="item.svg" />
+        <svg-alias :alias="item.iconAlias" />
         <span>{{ item.name }}</span>
       </div>
     </div>
@@ -27,9 +27,10 @@
 </template>
 <script>
 export default {
+  name: "MobileNavigationBar",
   props: {
     /**
-     * An array of items whose object contains two keys {svg, name}
+     * An array of items whose object contains two keys {iconAlias, name}
      *
      * @type {Array}
      */
@@ -80,6 +81,6 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../../scss/components/mobileNavigationBar";
 </style>

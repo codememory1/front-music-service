@@ -1,22 +1,22 @@
 <template>
   <div :class="'notification notification_type--' + type">
-    <img
+    <img-alias
       v-if="type === 'success'"
-      src="public/images/icons/success.svg"
-      alt="success"
-      class="notification__icon"
+      :alias="'success-svg'"
+      :alt="'success'"
+      :class="'notification__icon'"
     />
-    <img
+    <img-alias
       v-if="type === 'error'"
-      src="public/images/icons/error.svg"
-      alt="error"
-      class="notification__icon"
+      :alias="'error-svg'"
+      :alt="'error'"
+      :class="'notification__icon'"
     />
-    <img
+    <img-alias
       v-if="type === 'warning'"
-      src="public/images/icons/warning.svg"
-      alt="warning"
-      class="notification__icon"
+      :alias="'warning-svg'"
+      :alt="'warning'"
+      :class="'notification__icon'"
     />
 
     <div class="notification__content">
@@ -63,6 +63,6 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../scss/components/notification";
 </style>

@@ -53,13 +53,16 @@ export default {
       required: false
     }
   },
+
   model: {
     prop: "value",
     event: "input"
   },
+
   data: () => ({
     id: null
   }),
+
   created() {
     this.id = generateRandomString();
   }

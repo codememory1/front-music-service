@@ -121,10 +121,12 @@ export default {
       required: false
     }
   },
+
   data: () => ({
     value: 0,
     mutatedTooltipPositions: []
   }),
+
   created() {
     this.value = this.defaultValue;
     this.mutatedTooltipPositions = this.tooltipPositions;

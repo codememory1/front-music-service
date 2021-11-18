@@ -16,9 +16,11 @@ import BaseFormButton from "../Buttons/BaseFormButtonComponent";
 
 export default {
   name: "SecurityModalForm",
+
   components: {
     BaseFormButton
   },
+
   props: {
     /**
      * Button text

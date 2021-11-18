@@ -50,19 +50,36 @@ export default {
     SecurityModalForm,
     SecurityFormField
   },
+
   data: () => ({
     password: null,
     repeatPassword: null,
     code: [null, null, null, null, null, null],
     activeIndexCode: null
   }),
+
   methods: {
+    /**
+     * Opening a window
+     */
     open() {
       this.$refs.securityModal.open();
     },
+
+    /**
+     * Closing the window
+     */
     close() {
       this.$refs.securityModal.close();
     },
+
+    /**
+     * Handler when entering code
+     *
+     * @param index
+     * @param value
+     * @param target
+     */
     changeCode(index, value, target) {
       if (value.length > 1) {
         target.value = value.substring(0, 1);
@@ -72,9 +89,21 @@ export default {
         this.focus(index);
       }
     },
+
+    /**
+     * Getting a code as a single number
+     *
+     * @returns {number}
+     */
     getCode() {
       return Number(this.code.join(""));
     },
+
+    /**
+     * Focus handler to the following code
+     *
+     * @param index
+     */
     focus(index) {
       if (!this.isEmpty(this.code[index])) {
         this.activeIndexCode++;

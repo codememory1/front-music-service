@@ -10,7 +10,7 @@ export default {
   name: "DropDown"
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../../scss/variables";
 
 .drop-down {

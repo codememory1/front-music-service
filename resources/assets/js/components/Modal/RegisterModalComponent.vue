@@ -55,21 +55,31 @@ import SecurityModalForm from "./SecurityModalFormComponent";
 import SecurityFormField from "./SecurityFormFieldComponent";
 
 export default {
+  name: "RegisterModal",
   components: {
     SecurityModal,
     SecurityModalForm,
     SecurityFormField
   },
+
   data: () => ({
     name: null,
     email: null,
     password: null,
     repeatPassword: null
   }),
+
   methods: {
+    /**
+     * Opening a window
+     */
     open() {
       this.$refs.securityModal.open();
     },
+
+    /**
+     * Closing the window
+     */
     close() {
       this.$refs.securityModal.close();
     }

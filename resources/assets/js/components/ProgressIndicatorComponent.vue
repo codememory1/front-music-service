@@ -44,12 +44,17 @@ export default {
   },
 
   computed: {
+    /**
+     * Returns the index of the active indexer
+     *
+     * @returns {number}
+     */
     getActiveIndex() {
       return this.activeIndex - 1;
     }
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../scss/components/progressIndicator";
 </style>

@@ -17,21 +17,21 @@
     <progress-bar />
     <div class="opened-mobile-player__control">
       <div class="repeat">
-        <inline-svg src="public/images/icons/repeat.svg" />
+        <svg-alias :alias="'repeat-svg'" />
       </div>
       <div class="opened-mobile-player__control--center">
         <div class="prev">
-          <inline-svg src="public/images/icons/prev.svg" />
+          <svg-alias :alias="'prev-svg'" />
         </div>
         <div class="play-pause">
-          <inline-svg src="public/images/icons/pause.svg" />
+          <svg-alias :alias="'pause-svg'" />
         </div>
         <div class="next">
-          <inline-svg src="public/images/icons/next.svg" />
+          <svg-alias :alias="'next-svg'" />
         </div>
       </div>
       <div class="shuffle">
-        <inline-svg src="public/images/icons/shuffle.svg" />
+        <svg-alias :alias="'shuffle-svg'" />
       </div>
     </div>
   </div>
@@ -40,6 +40,7 @@
 import ProgressBar from "../BaseRangeComponent";
 
 export default {
+  name: "MobileOpenedPlayer",
   components: {
     ProgressBar
   },
@@ -76,6 +77,6 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../../scss/components/openedMobilePlayer";
 </style>

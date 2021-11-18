@@ -48,6 +48,7 @@ export default {
     ShareButton,
     BaseAlbum
   },
+
   data: () => ({
     bestTracks: [
       {
@@ -121,14 +122,11 @@ export default {
       slidesPerView: 6
     }
   }),
+
   computed: {
     bestTracksSwiper() {
       return this.$refs.bestTracksSwiper.$swiper;
     }
-  },
-  mounted() {
-    console.log("Current Swiper instance object", this.swiper);
-    this.bestTracksSwiper.slideTo(3, 1000, false);
   }
 };
 </script>

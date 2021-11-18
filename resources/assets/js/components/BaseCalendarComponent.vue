@@ -3,7 +3,7 @@
     <div class="calendar__content">
       <div class="calendar__header">
         <div class="calendar__button calendar_button_header" @click="prev">
-          <inline-svg src="public/images/icons/arrow-left.svg" />
+          <svg-alias :alias="'arrow-left-svg'" />
         </div>
         <div class="month">
           <span class="month__name"
@@ -12,7 +12,7 @@
           >
         </div>
         <div class="calendar__button calendar_button_header" @click="next">
-          <inline-svg src="public/images/icons/arrow-right.svg" />
+          <svg-alias :alias="'arrow-right-svg'" />
         </div>
       </div>
       <div class="calendar__days-week">
@@ -235,6 +235,6 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../scss/components/calendar";
 </style>

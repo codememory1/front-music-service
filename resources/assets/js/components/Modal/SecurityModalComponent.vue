@@ -12,9 +12,11 @@
 import BaseModal from "../../components/Modal/BaseModalComponent";
 
 export default {
+  name: "SecurityModal",
   components: {
     BaseModal
   },
+
   props: {
     /**
      * Modal name
@@ -26,10 +28,18 @@ export default {
       required: true
     }
   },
+
   methods: {
+    /**
+     * Opening a window
+     */
     open() {
       this.$refs.modal.open();
     },
+
+    /**
+     * Closing the window
+     */
     close() {
       this.$refs.modal.close();
     }

@@ -21,7 +21,7 @@
           :key="index"
           class="subscription__option"
         >
-          <inline-svg src="public/images/icons/check-mark.svg" />
+          <svg-alias :alias="'check-mark-svg'" />
           <p class="subscription__option--name">
             {{ option }}
           </p>
@@ -130,7 +130,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../../scss/variables";
 
 .subscription {

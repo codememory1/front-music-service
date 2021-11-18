@@ -13,7 +13,7 @@
 <script>
 import ThePlayerHeader from "../components/Headers/ThePlayerHeaderComponent";
 import ThePlayerNavigation from "../components/Navigation/ThePlayerNavigationComponent";
-import DesktopPlayer from "../components/DesktopPlayerComponent";
+import DesktopPlayer from "../components/Player/DesktopPlayerComponent";
 
 export default {
   name: "PlayerLayout",

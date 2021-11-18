@@ -83,21 +83,35 @@ export default {
     SecurityModalForm,
     SecurityFormField
   },
+
   data: () => ({
     login: null,
     password: null,
     remember: false
   }),
+
   created() {
     this.login = this.$storage.getByKey("auth_data", "login");
   },
+
   methods: {
+    /**
+     * Opening a window
+     */
     open() {
       this.$refs.securityModal.open();
     },
+
+    /**
+     * Closing the window
+     */
     close() {
       this.$refs.securityModal.close();
     },
+
+    /**
+     * Handler when clicking on the authorization button
+     */
     signIn() {
       if (this.remember) {
         this.$storage.create("auth_data", {

@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__logo">
-        <img src="public/images/logo.png" alt="logo" />
+        <img-alias :alias="'logo'" :alt="'logo'" />
       </div>
       <div class="footer__columns">
         <div class="footer__column">
@@ -46,16 +46,16 @@
           </p>
           <div class="networks">
             <a href="#">
-              <inline-svg src="public/images/icons/instagram-square.svg" />
+              <svg-alias :alias="'instagram-sq-svg'" />
             </a>
             <a href="#">
-              <inline-svg src="public/images/icons/facebook-square.svg" />
+              <svg-alias :alias="'facebook-sq-svg'" />
             </a>
             <a href="#">
-              <inline-svg src="public/images/icons/vk-square.svg" />
+              <svg-alias :alias="'vk-sq-svg'" />
             </a>
             <a href="#">
-              <inline-svg src="public/images/icons/twitter-square.svg" />
+              <svg-alias :alias="'twitter-sq-svg'" />
             </a>
           </div>
         </div>
@@ -77,6 +77,6 @@ export default {
   name: "TheFooter"
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../scss/components/footer";
 </style>

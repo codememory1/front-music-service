@@ -9,16 +9,17 @@
     </div>
     <div class="mobile-player__control">
       <div class="mobile-player__play-pause">
-        <inline-svg src="public/images/icons/pause-bold.svg" />
+        <svg-alias :alias="'pause-bold-svg'" />
       </div>
       <div class="mobile-player__next">
-        <inline-svg src="public/images/icons/next.svg" />
+        <svg-alias :alias="'next-svg'" />
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
+  name: "MobilePlayer",
   props: {
     /**
      * Active music name
@@ -52,6 +53,6 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../../scss/components/mobilePlayer";
 </style>

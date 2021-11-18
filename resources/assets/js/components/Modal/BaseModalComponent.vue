@@ -32,15 +32,26 @@ export default {
       required: false
     }
   },
+
   data: () => ({
     isOpen: false
   }),
+
   methods: {
+    /**
+     * Closing a modal window when clicking outside the window
+     *
+     * @param event
+     */
     closeOutContainer(event) {
       if (event.target.contains(this.$refs.modal)) {
         this.close();
       }
     },
+
+    /**
+     * Opening a window
+     */
     open() {
       this.isOpen = true;
 
@@ -50,6 +61,10 @@ export default {
 
       this.$emit("open");
     },
+
+    /**
+     * Closing the window
+     */
     close() {
       this.isOpen = false;
 

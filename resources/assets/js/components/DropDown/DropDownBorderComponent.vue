@@ -6,7 +6,7 @@ export default {
   name: "DropDownBorder"
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../../scss/variables";
 
 .drop-down__border {

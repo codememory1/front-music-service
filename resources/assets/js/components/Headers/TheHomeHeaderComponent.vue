@@ -26,7 +26,7 @@
     <div class="container">
       <div class="header__navbar">
         <div class="header__logo">
-          <img src="public/images/logo.png" alt="logo" />
+          <img-alias :alias="'logo'" :alt="'logo'" />
         </div>
         <div class="navbar__right">
           <div class="header__navigation">
@@ -104,7 +104,11 @@ export default {
     PasswordRecoveryModal,
     ChangePasswordModal
   },
+
   methods: {
+    /**
+     * Handler for clicking on the password button
+     */
     recoveryPassword() {
       this.$refs.passwordRecoveryModal.close();
       this.$refs.changePasswordModal.open();

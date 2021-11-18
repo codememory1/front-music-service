@@ -29,6 +29,7 @@ export default {
       required: false
     }
   },
+
   computed: {
     bangStyles() {
       return {
@@ -38,7 +39,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .subscription__bang {
   top: 0;
   left: 0;

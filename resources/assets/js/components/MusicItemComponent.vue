@@ -10,15 +10,15 @@
     <div class="music-item__right-info">
       <span class="music-item__time">03:20</span>
       <div class="music-item__buttons">
-        <img
-          class="music-item__button--like"
-          src="public/images/icons/like.svg"
-          alt="like"
+        <img-alias
+          :class="'music-item__button--like'"
+          :alias="'like-svg'"
+          :alt="'like'"
         />
-        <img
-          class="music-item__button--actions"
-          src="public/images/icons/vertical-ellipses.svg"
-          alt="actions"
+        <img-alias
+          :class="'music-item__button--actions'"
+          :alias="'vertical-ellipses-svg'"
+          :alt="'actions'"
         />
       </div>
     </div>
@@ -60,7 +60,9 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss">
+@import "../../scss/variables";
+
 .music-item {
   width: 100%;
   height: 55px;
@@ -69,68 +71,68 @@ export default {
   justify-content: space-between;
   transition: background-color 0.4s;
   cursor: pointer;
-}
 
-.music-item:hover {
-  background-color: #0c1a2c;
-}
+  &:hover {
+    background-color: #0c1a2c;
+  }
 
-.music-item__left-info {
-  display: flex;
-}
+  &__left-info {
+    display: flex;
+  }
 
-.music-item__image {
-  width: 80px;
-  height: 55px;
-}
+  &__image {
+    width: 80px;
+    height: 55px;
+  }
 
-.music-item__names {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 12px;
-}
+  &__names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 12px;
+  }
 
-.music-item__name {
-  font-size: 16px;
-  color: #fff;
-  line-height: 24px;
-  font-weight: 500;
-  margin-bottom: 7px;
-}
+  &__name {
+    font-size: 16px;
+    color: #fff;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 7px;
+  }
 
-.music-item__author {
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 24px;
-  color: #696969;
-}
+  &__author {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    color: $gray-dark;
+  }
 
-.music-item__right-info {
-  display: flex;
-  justify-content: center;
-}
+  &__right-info {
+    display: flex;
+    justify-content: center;
+  }
 
-.music-item__time {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  color: #696969;
-  margin-right: 38px;
-  display: flex;
-  align-items: center;
-}
+  &__time {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: $gray-dark;
+    margin-right: 38px;
+    display: flex;
+    align-items: center;
+  }
 
-.music-item__buttons {
-  display: flex;
-  align-items: center;
-}
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
 
-.music-item__buttons img {
-  cursor: pointer;
-}
+  &__buttons img {
+    cursor: pointer;
+  }
 
-.music-item__button--actions {
-  margin-left: 15px;
+  &__button--actions {
+    margin-left: 15px;
+  }
 }
 </style>

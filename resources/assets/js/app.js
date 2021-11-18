@@ -3,6 +3,8 @@ import router from "./routes/router";
 import TouchEvents from "vue2-touch-events";
 import InlineSvg from "vue-inline-svg";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import ImageAlias from "./components/Globals/ImageAliasComponent";
+import InlineSvgAlias from "./components/Globals/InlineSvgAliasComponent";
 
 // Import plugins
 import AxiosInstance from "./plugins/AxiosInstance";
@@ -17,6 +19,8 @@ Vue.use(Storage);
 Vue.component("InlineSvg", InlineSvg);
 Vue.component("CoreSwiper", Swiper);
 Vue.component("SlideSwiper", SwiperSlide);
+Vue.component("ImgAlias", ImageAlias);
+Vue.component("SvgAlias", InlineSvgAlias);
 
 Vue.productionTip = false;
 
