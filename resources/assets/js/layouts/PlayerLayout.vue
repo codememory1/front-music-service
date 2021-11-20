@@ -28,7 +28,9 @@ export default {
 @import "../../scss/variables";
 
 .player-layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  overflow: hidden;
   height: 100%;
 
   &__content {
@@ -36,14 +38,13 @@ export default {
     flex-direction: column;
     width: 100%;
     position: relative;
+	overflow: auto;
   }
 }
 
 .player__header {
   position: absolute;
-  padding-top: 40px;
-  padding-left: $gutter;
-  padding-right: $gutter;
+  padding: 20px $gutter;
   z-index: 99;
 }
 
