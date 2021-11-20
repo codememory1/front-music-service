@@ -8,7 +8,7 @@
       />
     </template>
     <template v-slot:content>
-      <div class="albums" style="width: 1413px">
+      <div class="albums">
         <core-swiper ref="albumsSwiper" :options="swiperOptions">
           <slide-swiper v-for="(album, index) in albums" :key="index">
             <slot name="slider" :album="album" />
@@ -76,11 +76,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../scss/variables";
-
 .albums {
-  margin-top: 40px;
-  margin-left: $gutter;
-  margin-right: $gutter;
+  width: 100%;
 }
 
 .top-albums {
