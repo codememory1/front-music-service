@@ -33,6 +33,7 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 0 $gutter;
+	margin-bottom: 40px;
   }
 
   &__title {
