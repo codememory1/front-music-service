@@ -30,6 +30,8 @@ export default {};
   height: max-content;
   display: flex;
   justify-content: space-between;
+  backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba($dark-bg, 0.5);
 
   &_profile {
     display: flex;
