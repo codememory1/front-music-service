@@ -1,27 +1,28 @@
 <template>
   <div class="main__content">
-    <div
-      class="artist__header"
-      style="background-image: url('/public/images/artist-header.png')"
-    >
+    <!-- Header START -->
+    <div class="artist__header" :style="artistHeaderStyle">
       <div class="relative">
-        <h1 class="artist__name">Zara Larsson</h1>
-        <p class="artist__description">
-          Millions of songs and podcasts. No credit card. of songs and podcasts.
-          No credit card.
-        </p>
+        <h1 class="artist__name">{{ artistInfo.name }}</h1>
+        <p class="artist__description">{{ artistInfo.description }}</p>
         <div class="artist__actions">
-          <base-custom-click-button :class="'accent btn-subscription'">
+          <base-custom-click-button
+            v-if="artistInfo.isSubscribed"
+            :class="'accent btn-subscription'"
+          >
             Subscribe
           </base-custom-click-button>
-          <!--          <base-custom-click-button :class="'dark btn-subscription'">-->
-          <!--            Unsubscribe-->
-          <!--          </base-custom-click-button>-->
+          <base-custom-click-button v-else :class="'dark btn-subscription'">
+            Unsubscribe
+          </base-custom-click-button>
           <share-button />
         </div>
       </div>
     </div>
-    <section-albums :sectionTitle="'Weeklly Top Track'" :albums="bestTracks">
+    <!-- Header END -->
+
+    <!-- Top albums START -->
+    <section-albums :sectionTitle="'Top Albums'" :albums="bestTracks">
       <template v-slot:slider="{ album }">
         <base-album
           :name="album.name"
@@ -31,6 +32,85 @@
         />
       </template>
     </section-albums>
+    <!-- Top albums END -->
+
+    <div class="columns">
+      <!-- Top musics START -->
+      <base-section :title="'Top tracks'" :class="'section__top-musics'">
+        <template v-slot:content>
+          <music-item
+            :name="'NO MERCY'"
+            :image="'/public/images/track1.png'"
+            :author="'Tvbuu'"
+          />
+          <music-item
+            :name="'NO MERCY'"
+            :image="'/public/images/track1.png'"
+            :author="'Tvbuu'"
+          />
+          <music-item
+            :name="'NO MERCY'"
+            :image="'/public/images/track1.png'"
+            :author="'Tvbuu'"
+          />
+          <music-item
+            :name="'NO MERCY'"
+            :image="'/public/images/track1.png'"
+            :author="'Tvbuu'"
+          />
+          <music-item
+            :name="'NO MERCY'"
+            :image="'/public/images/track1.png'"
+            :author="'Tvbuu'"
+          />
+          <music-item
+            :name="'NO MERCY'"
+            :image="'/public/images/track1.png'"
+            :author="'Tvbuu'"
+          />
+        </template>
+      </base-section>
+      <!-- Top musics END -->
+
+      <!-- Similar artists START -->
+      <base-section
+        :title="'Similar artists'"
+        :class="'section__similar-artists'"
+      >
+        <template v-slot:content>
+          <div class="similar-artists">
+            <div
+              v-for="(artist, index) in similarArtists"
+              :key="index"
+              class="similar-artist"
+            >
+              <router-link :to="{ name: 'artist', params: { id: artist.id } }">
+                <img :src="artist.image" :alt="artist.name" />
+              </router-link>
+            </div>
+          </div>
+
+          <!-- Best albums of similar artists START -->
+          <base-section
+            :title="'Best albums of similar artists'"
+            :class="'best-albums__similar-artists'"
+          >
+            <template v-slot:content>
+              <album-with-play
+                v-for="(bestAlbum, index) in bestAlbumsSimilarArtists"
+                :key="index"
+                :name="bestAlbum.name"
+                :image="bestAlbum.image"
+                :authors="bestAlbum.authors"
+                :to="bestAlbum.to"
+              />
+            </template>
+          </base-section>
+          <!-- Best albums of similar artists END -->
+        </template>
+      </base-section>
+      <!-- Similar artists END -->
+    </div>
   </div>
 </template>
 <script>
@@ -38,6 +118,9 @@ import BaseCustomClickButton from "../../components/Buttons/BaseCustomClickButto
 import ShareButton from "../../components/Buttons/ShareButtonComponent";
 import BaseAlbum from "../../components/Albums/BaseAlbumComponent";
 import SectionAlbums from "../../components/SectionAlbumsComponent";
+import BaseSection from "../../components/Sections/BaseSectionComponent";
+import MusicItem from "../../components/MusicItemComponent";
+import AlbumWithPlay from "../../components/Albums/AlbumWithPlayComponent";
 
 export default {
   name: "ArtistView",
@@ -45,10 +128,20 @@ export default {
     BaseCustomClickButton,
     ShareButton,
     BaseAlbum,
-    SectionAlbums
+    SectionAlbums,
+    BaseSection,
+    MusicItem,
+    AlbumWithPlay
   },
 
   data: () => ({
+    artistInfo: {
+      name: "Zara Larsson",
+      description:
+        "Millions of songs and podcasts. No credit card. of songs and podcasts. No credit card.",
+      background: "/public/images/artist-header.png",
+      isSubscribed: false
+    },
     bestTracks: [
       {
         name: "NO MERCY",
@@ -138,61 +231,95 @@ export default {
           }
         ]
       }
+    ],
+    similarArtists: [
+      {
+        id: 1,
+        name: "Name",
+        image: "/public/images/artist.png"
+      },
+      {
+        id: 1,
+        name: "Name",
+        image: "/public/images/artist2.png"
+      },
+      {
+        id: 1,
+        name: "Name",
+        image: "/public/images/artist3.png"
+      },
+      {
+        id: 1,
+        name: "Name",
+        image: "/public/images/artist4.png"
+      },
+      {
+        id: 1,
+        name: "Name",
+        image: "/public/images/artist5.png"
+      },
+      {
+        id: 1,
+        name: "Name",
+        image: "/public/images/artist2.png"
+      },
+      {
+        id: 1,
+        name: "Name",
+        image: "/public/images/artist.png"
+      },
+      {
+        id: 1,
+        name: "Name",
+        image: "/public/images/artist.png"
+      }
+    ],
+    bestAlbumsSimilarArtists: [
+      {
+        name: "NO MERCY",
+        image: "/public/images/album-image.png",
+        to: "",
+        authors: [
+          {
+            id: 1,
+            name: "Tvbuu"
+          }
+        ]
+      },
+      {
+        name: "NO MERCY",
+        image: "/public/images/album-image2.png",
+        to: "",
+        authors: [
+          {
+            id: 1,
+            name: "Tvbuu"
+          }
+        ]
+      },
+      {
+        name: "NO MERCY",
+        image: "/public/images/album-image2.png",
+        to: "",
+        authors: [
+          {
+            id: 1,
+            name: "Tvbuu"
+          }
+        ]
+      }
     ]
-  })
+  }),
+
+  computed: {
+    artistHeaderStyle() {
+      return {
+        backgroundImage: `url(${this.artistInfo.background})`
+      };
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
-@import "../../../scss/variables";
-
-.relative {
-  padding: 0 $gutter;
-}
-
-.artist {
-  &__header {
-    width: 100%;
-    height: 390px;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    &:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: #090909;
-      opacity: 0.4;
-      top: 0;
-      left: 0;
-    }
-  }
-
-  &__name {
-    color: #fff;
-    font-size: 48px;
-    font-weight: 500;
-    padding-top: 125px;
-    padding-bottom: 15px;
-  }
-
-  &__description {
-    font-size: 16px;
-    font-weight: 400;
-    color: #939393;
-    padding-bottom: 40px;
-    width: 410px;
-  }
-
-  &__actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-.btn-subscription {
-  padding: 11px 24px;
-}
+@import "../../../scss/views/artist";
 </style>
