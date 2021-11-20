@@ -2,9 +2,9 @@
 
 .player {
   background-color: $dark-bg;
-  padding: 14px $gutter;
   width: 100%;
   height: max-content;
+  padding: 14px $gutter 40px;
 }
 
 .player__controls-top {
@@ -53,6 +53,8 @@
   margin: 0 10px;
   width: 100px!important;
   cursor: pointer;
+  position: relative;
+  bottom: 2px;
 }
 
 .player__center-control {
