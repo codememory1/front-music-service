@@ -151,7 +151,7 @@ export default {
 @import "../../scss/variables";
 
 .vue-slider-rail {
-  background-color: $light-bg;
+  background-color: lighten($light-bg, 5%);
   border-radius: 5px;
 }
 
