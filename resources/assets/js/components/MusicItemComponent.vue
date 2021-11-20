@@ -10,15 +10,10 @@
     <div class="music-item__right-info">
       <span class="music-item__time">03:20</span>
       <div class="music-item__buttons">
-        <img-alias
-          :class="'music-item__button--like'"
-          :alias="'like-svg'"
-          :alt="'like'"
-        />
-        <img-alias
+        <svg-alias :class="'music-item__button--like'" :alias="'like-svg'" />
+        <svg-alias
           :class="'music-item__button--actions'"
           :alias="'vertical-ellipses-svg'"
-          :alt="'actions'"
         />
       </div>
     </div>
@@ -71,9 +66,22 @@ export default {
   justify-content: space-between;
   transition: background-color 0.4s;
   cursor: pointer;
+  border-radius: 5px;
 
   &:hover {
-    background-color: #0c1a2c;
+    background-color: lighten($dark-bg, 5%);
+  }
+
+  &:hover &__time {
+    color: #fff;
+  }
+
+  &.active {
+    background-color: lighten($dark-bg, 5%);
+  }
+
+  &.active &__time {
+    color: #fff;
   }
 
   &__left-info {
@@ -93,11 +101,10 @@ export default {
   }
 
   &__name {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
     line-height: 24px;
     font-weight: 500;
-    margin-bottom: 7px;
   }
 
   &__author {
@@ -120,11 +127,28 @@ export default {
     margin-right: 38px;
     display: flex;
     align-items: center;
+    transition: color 0.3s ease-in-out;
   }
 
   &__buttons {
     display: flex;
     align-items: center;
+
+    svg {
+      path,
+      circle {
+        transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+      }
+
+      &:hover path {
+        stroke: $accent;
+      }
+
+      &:hover circle {
+        stroke: $accent;
+        fill: $accent;
+      }
+    }
   }
 
   &__buttons img {
@@ -134,5 +158,9 @@ export default {
   &__button--actions {
     margin-left: 15px;
   }
+}
+
+.music-item__button--like {
+  stroke-width: 1.2px;
 }
 </style>
