@@ -68,11 +68,11 @@ export default {
 
 .album {
   position: relative;
-  width: 200px;
+  width: max-content;
   height: max-content;
   padding: 20px 17px;
-  transition: background-color 0.3s ease-in-out;
   background-color: $dark-bg;
+  transition: background-color 0.3s ease-in-out;
 
   &__link {
     width: 100%;
@@ -81,8 +81,10 @@ export default {
   }
 
   &__image {
-    width: 167px;
-    height: 167px;
+    width: 153px;
+    height: 140px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 
   &__name {
