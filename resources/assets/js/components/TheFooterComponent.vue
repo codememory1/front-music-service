@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__logo">
-        <img-alias :alias="'logo'" :alt="'logo'" />
+        <img-alias alias="logo" alt="logo" />
       </div>
       <div class="footer__columns">
         <div class="footer__column">
@@ -46,16 +46,16 @@
           </p>
           <div class="networks">
             <a href="#">
-              <svg-alias :alias="'instagram-sq-svg'" />
+              <svg-alias alias="instagram-sq-svg" />
             </a>
             <a href="#">
-              <svg-alias :alias="'facebook-sq-svg'" />
+              <svg-alias alias="facebook-sq-svg" />
             </a>
             <a href="#">
-              <svg-alias :alias="'vk-sq-svg'" />
+              <svg-alias alias="vk-sq-svg" />
             </a>
             <a href="#">
-              <svg-alias :alias="'twitter-sq-svg'" />
+              <svg-alias alias="twitter-sq-svg" />
             </a>
           </div>
         </div>

@@ -1,32 +1,32 @@
 <template>
-  <security-modal ref="securityModal" :title="'Sign Up'">
+  <security-modal ref="securityModal" title="Sign Up">
     <!-- Form START -->
     <template v-slot:form>
-      <security-modal-form :button-label="'Create account'">
+      <security-modal-form button-label="Create account">
         <!-- Form Fields START -->
         <security-form-field
-          :label="'Name'"
-          :icon-class="'fa-id-card'"
+          label="Name"
+          icon-class="fa-id-card"
           :value="name"
           v-model="name"
         />
         <security-form-field
-          :label="'Email'"
-          :icon-class="'fa-envelope'"
+          label="Email"
+          icon-class="fa-envelope"
           :value="email"
           v-model="email"
         />
         <security-form-field
-          :label="'Password'"
-          :icon-class="'fa-key'"
-          :type="'password'"
+          label="Password"
+          icon-class="fa-key"
+          type="password"
           :value="password"
           v-model="password"
         />
         <security-form-field
-          :label="'Repeat password'"
-          :icon-class="'fa-key'"
-          :type="'password'"
+          label="Repeat password"
+          icon-class="fa-key"
+          type="password"
           :value="repeatPassword"
           v-model="repeatPassword"
         />

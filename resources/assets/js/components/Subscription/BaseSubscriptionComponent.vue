@@ -21,7 +21,7 @@
           :key="index"
           class="subscription__option"
         >
-          <svg-alias :alias="'check-mark-svg'" />
+          <svg-alias alias="check-mark-svg" />
           <p class="subscription__option--name">
             {{ option }}
           </p>

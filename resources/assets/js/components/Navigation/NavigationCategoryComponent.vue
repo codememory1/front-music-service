@@ -47,6 +47,7 @@ export default {
       text-transform: uppercase;
       margin-bottom: 10px;
       display: block;
+      margin-left: 40px;
     }
   }
 }

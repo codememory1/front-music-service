@@ -1,5 +1,5 @@
 <template>
-  <security-modal ref="securityModal" :title="'Sign In'">
+  <security-modal ref="securityModal" title="Sign In">
     <!-- Other authorization methods START -->
     <template v-slot:contentAfterTitle>
       <div class="methods-auth">
@@ -19,19 +19,19 @@
     <!-- Form START -->
     <template v-slot:form>
       <security-modal-form
-        :button-label="'Sing in to your account'"
+        button-label="Sing in to your account"
         @click="signIn"
       >
         <!-- Form Fields START -->
         <security-form-field
-          :label="'Login'"
-          :icon-class="'fa-user'"
+          label="Login"
+          icon-class="fa-user"
           v-model="login"
         />
         <security-form-field
-          :label="'Password'"
-          :icon-class="'fa-key'"
-          :type="'password'"
+          label="Password"
+          icon-class="fa-key"
+          :type="password"
           v-model="password"
         />
         <!-- Form Fields END -->

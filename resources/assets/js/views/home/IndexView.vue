@@ -97,12 +97,12 @@
 
         <div class="subscription__cards">
           <base-subscription
-            :id="1"
-            :title="'Basic'"
-            :mini-desc="'Essential feature'"
-            :old-price="59.99"
-            :price="53.99"
-            :is-valid="5"
+            id="1"
+            title="Basic"
+            mini-desc="Essential feature"
+            old-price="59.99"
+            price="53.99"
+            is-valid="5"
             :options="[
               'Access to all features',
               '5 Watchlists included',
@@ -112,12 +112,12 @@
             ]"
           />
           <base-subscription
-            :id="2"
-            :title="'Pro'"
-            :mini-desc="'Advanced feature'"
-            :old-price="89.99"
-            :price="80.99"
-            :is-valid="5"
+            id="2"
+            title="Pro"
+            mini-desc="Advanced feature"
+            old-price="89.99"
+            price="80.99"
+            is-valid="5"
             :options="[
               'Access to all features',
               '5 Watchlists included',
@@ -125,22 +125,19 @@
               'Priority support',
               'Another great feature'
             ]"
-            :background="'#3C56D6'"
+            background="#3C56D6"
           >
             <template v-slot:bang>
-              <subscription-bang
-                :title="'Рекомендуют'"
-                :background="'#3C56D6'"
-              />
+              <subscription-bang title="Рекомендуют" background="#3C56D6" />
             </template>
           </base-subscription>
           <base-subscription
-            :id="1"
-            :title="'Basic'"
-            :mini-desc="'Essential feature'"
-            :old-price="59.99"
-            :price="53.99"
-            :is-valid="5"
+            id="1"
+            title="Basic"
+            mini-desc="Essential feature"
+            old-price="59.99"
+            price="53.99"
+            is-valid="5"
             :options="[
               'Access to all features',
               '5 Watchlists included',

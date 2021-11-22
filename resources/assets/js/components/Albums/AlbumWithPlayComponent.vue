@@ -1,7 +1,7 @@
 <template>
   <base-album :name="name" :image="image" :authors="authors" :to="to">
     <div class="play-album" @click="$emit('play')">
-      <svg-alias :alias="'play-svg'" />
+      <svg-alias alias="play-svg" />
     </div>
   </base-album>
 </template>

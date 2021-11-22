@@ -2,19 +2,19 @@
   <div class="player__header">
     <div class="player__header_search">
       <div class="search">
-        <svg-alias :alias="'search-svg'" />
+        <svg-alias alias="search-svg" />
         <input type="text" placeholder="Search" class="search__input" />
       </div>
     </div>
     <div class="player__header_profile">
       <div class="bell">
         <span tabindex="0" class="bell__button">
-          <svg-alias :alias="'bell-svg'" />
+          <svg-alias alias="bell-svg" />
         </span>
       </div>
       <div class="profile">
         <img src="/public/images/user.png" alt="profile" />
-        <svg-alias :alias="'arrow-down-svg'" />
+        <svg-alias alias="arrow-down-svg" />
       </div>
     </div>
   </div>

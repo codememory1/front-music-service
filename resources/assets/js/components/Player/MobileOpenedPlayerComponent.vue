@@ -17,21 +17,21 @@
     <progress-bar />
     <div class="opened-mobile-player__control">
       <div class="repeat">
-        <svg-alias :alias="'repeat-svg'" />
+        <svg-alias alias="repeat-svg" />
       </div>
       <div class="opened-mobile-player__control--center">
         <div class="prev">
-          <svg-alias :alias="'prev-svg'" />
+          <svg-alias alias="prev-svg" />
         </div>
         <div class="play-pause">
-          <svg-alias :alias="'pause-svg'" />
+          <svg-alias alias="pause-svg" />
         </div>
         <div class="next">
-          <svg-alias :alias="'next-svg'" />
+          <svg-alias alias="next-svg" />
         </div>
       </div>
       <div class="shuffle">
-        <svg-alias :alias="'shuffle-svg'" />
+        <svg-alias alias="shuffle-svg" />
       </div>
     </div>
   </div>

@@ -1,13 +1,13 @@
 <template>
-  <security-modal ref="securityModal" :title="'Password Recovery'">
+  <security-modal ref="securityModal" title="Password Recovery">
     <template v-slot:form>
       <security-modal-form
-        :button-label="'Submit a restore request'"
+        button-label="Submit a restore request"
         @click="$emit('recovery')"
       >
         <security-form-field
-          :label="'Email'"
-          :icon-class="'fa-envelope'"
+          label="Email"
+          icon-class="fa-envelope"
           v-model="email"
         />
       </security-modal-form>

@@ -28,7 +28,7 @@
           placeholder
         }}</span>
         <div class="select__actions">
-          <svg-alias :alias="'arrow-right-svg'" :class="'select__arrow'" />
+          <svg-alias alias="arrow-right-svg" class="select__arrow" />
         </div>
       </div>
       <!-- Selected options END -->
@@ -48,7 +48,7 @@
               placeholder="Search..."
               @input="search"
             />
-            <svg-alias :alias="'search-svg'" />
+            <svg-alias alias="search-svg" />
           </div>
           <ul class="options">
             <li

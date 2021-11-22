@@ -62,11 +62,12 @@ export default {
     display: flex;
     position: relative;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px 0 15px 40px;
     width: 100%;
     color: #fff;
     font-size: 14px;
     font-weight: 500;
+    transition: background-color 0.3s ease-in-out;
 
     svg {
       margin-right: 15px;
@@ -87,6 +88,10 @@ export default {
       border-right: none;
       right: 0;
       transition: width 0.2s ease-in-out, border 0.2s ease-in-out;
+    }
+
+    &:hover {
+      background-color: lighten($dark-bg, 5%);
     }
 
     &.active {

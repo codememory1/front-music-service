@@ -3,11 +3,7 @@
     <template v-slot:categories>
       <navigation-category>
         <template v-slot:items>
-          <navigation-item
-            label="Home"
-            iconAlias="home-svg"
-            link="/home"
-          />
+          <navigation-item label="Home" iconAlias="home-svg" link="/home" />
           <navigation-item
             label="Search"
             iconAlias="search-svg"
@@ -20,7 +16,7 @@
           />
         </template>
       </navigation-category>
-      <navigation-category :title="'Your library'">
+      <navigation-category title="Your library">
         <template v-slot:items>
           <navigation-item
             label="Artist"

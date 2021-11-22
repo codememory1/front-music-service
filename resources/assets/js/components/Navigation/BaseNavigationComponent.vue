@@ -17,7 +17,6 @@ export default {
 @import "../../../scss/variables";
 
 .navigation {
-  padding-left: 40px;
   padding-top: 40px;
   background-color: $dark-bg;
   width: 300px;
@@ -26,6 +25,7 @@ export default {
 
   &__logo {
     margin-bottom: 50px;
+    margin-left: 40px;
 
     img {
       width: 60px;

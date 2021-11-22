@@ -14,10 +14,10 @@
     <div class="music-item__right-info">
       <span class="music-item__time">03:20</span>
       <div class="music-item__buttons">
-        <svg-alias :class="'music-item__button--like'" :alias="'like-svg'" />
+        <svg-alias class="music-item__button--like" alias="like-svg" />
         <svg-alias
-          :class="'music-item__button--actions'"
-          :alias="'vertical-ellipses-svg'"
+          class="music-item__button--actions"
+          alias="vertical-ellipses-svg"
         />
       </div>
     </div>

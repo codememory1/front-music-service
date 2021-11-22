@@ -3,7 +3,7 @@
     <div class="calendar__content">
       <div class="calendar__header">
         <div class="calendar__button calendar_button_header" @click="prev">
-          <svg-alias :alias="'arrow-left-svg'" />
+          <svg-alias alias="arrow-left-svg" />
         </div>
         <div class="month">
           <span class="month__name"
@@ -12,7 +12,7 @@
           >
         </div>
         <div class="calendar__button calendar_button_header" @click="next">
-          <svg-alias :alias="'arrow-right-svg'" />
+          <svg-alias alias="arrow-right-svg" />
         </div>
       </div>
       <div class="calendar__days-week">

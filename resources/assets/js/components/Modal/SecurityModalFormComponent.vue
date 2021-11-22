@@ -2,10 +2,7 @@
   <form class="security__form" @submit.prevent>
     <slot />
     <div class="security__button_wrap">
-      <base-form-button
-        :class="'security__button accent'"
-        @click="$emit('click')"
-      >
+      <base-form-button class="security__button accent" @click="$emit('click')">
         {{ buttonLabel }}
       </base-form-button>
     </div>

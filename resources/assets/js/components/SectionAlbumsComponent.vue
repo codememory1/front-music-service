@@ -1,5 +1,5 @@
 <template>
-  <base-section :title="sectionTitle" :class="'top-albums'">
+  <base-section :title="sectionTitle" class="top-albums">
     <template v-slot:top>
       <base-slider-navigation
         ref="sliderNavigation"

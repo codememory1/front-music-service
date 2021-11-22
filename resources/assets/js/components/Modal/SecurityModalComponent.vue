@@ -1,5 +1,5 @@
 <template>
-  <base-modal ref="modal" :class="'security__modal'">
+  <base-modal ref="modal" class="security__modal">
     <div class="security__modal_content">
       <h3 class="security__modal_title">{{ title }}</h3>
       <slot name="contentAfterTitle" />

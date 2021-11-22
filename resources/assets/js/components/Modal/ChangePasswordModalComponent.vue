@@ -1,5 +1,5 @@
 <template>
-  <security-modal ref="securityModal" :title="'Password Recovery'">
+  <security-modal ref="securityModal" title="Password Recovery">
     <!-- Code entry fields START -->
     <template v-slot:contentAfterTitle>
       <div class="code__items">
@@ -22,15 +22,15 @@
 
     <!-- Form START -->
     <template v-slot:form>
-      <security-modal-form :button-label="'Change password'">
+      <security-modal-form button-label="Change password">
         <security-form-field
-          :label="'Password'"
-          :icon-class="'fa-key'"
+          label="Password"
+          icon-class="fa-key"
           v-model="password"
         />
         <security-form-field
-          :label="'Repeat password'"
-          :icon-class="'fa-key'"
+          label="Repeat password"
+          icon-class="fa-key"
           v-model="repeatPassword"
         />
       </security-modal-form>

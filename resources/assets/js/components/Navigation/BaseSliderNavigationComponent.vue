@@ -6,7 +6,7 @@
       role="button"
       @click="$emit('prev')"
     >
-      <svg-alias :alias="'arrow-left-svg'" />
+      <svg-alias alias="arrow-left-svg" />
     </span>
     <span
       class="slider-navigation__button next"
@@ -14,7 +14,7 @@
       role="button"
       @click="$emit('next')"
     >
-      <svg-alias :alias="'arrow-right-svg'" />
+      <svg-alias alias="arrow-right-svg" />
     </span>
   </div>
 </template>

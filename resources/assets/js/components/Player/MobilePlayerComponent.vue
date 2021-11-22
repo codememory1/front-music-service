@@ -9,10 +9,10 @@
     </div>
     <div class="mobile-player__control">
       <div class="mobile-player__play-pause">
-        <svg-alias :alias="'pause-bold-svg'" />
+        <svg-alias alias="pause-bold-svg" />
       </div>
       <div class="mobile-player__next">
-        <svg-alias :alias="'next-svg'" />
+        <svg-alias alias="next-svg" />
       </div>
     </div>
   </div>

@@ -26,7 +26,7 @@
     <div class="container">
       <div class="header__navbar">
         <div class="header__logo">
-          <img-alias :alias="'logo'" :alt="'logo'" />
+          <img-alias alias="logo" alt="logo" />
         </div>
         <div class="navbar__right">
           <div class="header__navigation">
@@ -56,8 +56,8 @@
           </div>
           <div class="header__select--lang">
             <base-custom-select
-              :class="'header__lang'"
-              :placeholder="'Выберите язык'"
+              class="header__lang"
+              placeholder="Выберите язык"
               :options="[
                 {
                   label: 'English',
