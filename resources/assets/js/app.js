@@ -1,6 +1,6 @@
 import Vue from "vue";
 import router from "./routes";
-import Store from "./store";
+import store from "./store";
 
 // Import Components
 import TouchEvents from "vue2-touch-events";
@@ -22,7 +22,6 @@ Vue.use(TouchEvents);
 Vue.use(IsEmpty);
 Vue.use(Storage);
 Vue.use(VTooltip);
-Vue.use(Store);
 
 Vue.component("InlineSvg", InlineSvg);
 Vue.component("CoreSwiper", Swiper);
@@ -34,5 +33,6 @@ Vue.productionTip = false;
 
 new Vue({
   el: "#app",
-  router
+  router,
+  store
 });
