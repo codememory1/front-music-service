@@ -10,11 +10,13 @@ import InlineSvgAlias from "./components/Globals/InlineSvgAliasComponent";
 import AxiosInstance from "./plugins/AxiosInstance";
 import IsEmpty from "./plugins/IsEmpty";
 import Storage from "./plugins/Storage";
+import VTooltip from "v-tooltip";
 
 Vue.use(AxiosInstance);
 Vue.use(TouchEvents);
 Vue.use(IsEmpty);
 Vue.use(Storage);
+Vue.use(VTooltip);
 
 Vue.component("InlineSvg", InlineSvg);
 Vue.component("CoreSwiper", Swiper);

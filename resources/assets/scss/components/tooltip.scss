@@ -1,0 +1,17 @@
+@import "../variables";
+
+.tooltip {
+  z-index: 99;
+
+  &-inner {
+    position: relative;
+    background-color: darken($light-bg, 5%);
+    padding: 4px 7px;
+    color: #fff;
+    border-radius: 5px;
+  }
+}
+
+.tooltip.accent > div.tooltip-inner {
+  background-color: $accent;
+}
