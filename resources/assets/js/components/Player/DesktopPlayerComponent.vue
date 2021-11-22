@@ -2,18 +2,18 @@
   <div class="player">
     <div class="player__controls-top">
       <div class="player__left-control">
-        <div class="player__button">
+        <div class="player__button" v-tooltip="'Like and suggest similar'">
           <svg-alias :alias="'like-svg'" />
         </div>
-        <div class="player__button">
+        <div class="player__button" v-tooltip="'Add to playlist'">
           <svg-alias :alias="'playlist-svg'" />
         </div>
-        <div class="player__button">
+        <div class="player__button" v-tooltip="'Expand player'">
           <svg-alias :alias="'expand-svg'" />
         </div>
       </div>
       <div class="player__center-control">
-        <div class="repeat">
+        <div class="repeat" v-tooltip="'Repeat track'">
           <svg-alias :alias="'repeat-svg'" />
         </div>
         <div class="prev">
@@ -25,7 +25,7 @@
         <div class="next">
           <svg-alias :alias="'next-svg'" />
         </div>
-        <div class="shuffle">
+        <div class="shuffle" v-tooltip="'Shuffle music'">
           <svg-alias :alias="'shuffle-svg'" />
         </div>
       </div>
