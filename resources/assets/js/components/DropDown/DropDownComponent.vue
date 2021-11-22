@@ -1,7 +1,7 @@
 <template>
   <div class="drop-down">
     <ul class="drop-down__items">
-      <slot name="items" />
+      <slot />
     </ul>
   </div>
 </template>
@@ -18,6 +18,7 @@ export default {
   width: 310px;
   height: max-content;
   padding: 10px 18px;
+  z-index: 999;
 
   &__border {
     width: 100%;
