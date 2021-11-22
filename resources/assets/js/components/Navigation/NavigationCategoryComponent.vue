@@ -24,31 +24,3 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-@import "../../../scss/variables";
-
-.navigation {
-  &__items {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__category {
-    margin-bottom: 50px;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
-    &--name {
-      color: $accent;
-      font-size: 12px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      display: block;
-      margin-left: 40px;
-    }
-  }
-}
-</style>

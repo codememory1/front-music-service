@@ -26,20 +26,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "../../../scss/variables";
-
-.section {
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 $gutter;
-    margin-bottom: 40px;
-  }
-
-  &__title {
-    font-size: 20px;
-    color: #fff;
-    font-weight: 500;
-  }
-}
+@import "../../../scss/components/section";
 </style>

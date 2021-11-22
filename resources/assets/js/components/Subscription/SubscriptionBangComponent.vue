@@ -39,22 +39,3 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-.subscription__bang {
-  top: 0;
-  left: 0;
-  position: absolute;
-  padding: 10px 0;
-  text-align: center;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  width: 100%;
-
-  span {
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-  }
-}
-</style>
