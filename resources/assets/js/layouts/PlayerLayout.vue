@@ -1,10 +1,10 @@
 <template>
   <div class="player-layout">
     <the-player-navigation />
-    <div class="player-layout__content">
+    <div ref="playerLayoutContent" class="player-layout__content">
       <div class="content__scroll">
         <the-player-header />
-        <router-view />
+        <router-view :position="contentPosition" />
       </div>
       <desktop-player />
     </div>
@@ -21,6 +21,21 @@ export default {
     ThePlayerHeader,
     ThePlayerNavigation,
     DesktopPlayer
+  },
+
+  data: () => ({
+    contentPosition: {
+      x: 0,
+      y: 0
+    }
+  }),
+
+  mounted() {
+    const playerLayoutContentRect =
+      this.$refs.playerLayoutContent.getBoundingClientRect();
+
+    this.contentPosition.x = playerLayoutContentRect.x;
+    this.contentPosition.y = playerLayoutContentRect.y;
   }
 };
 </script>
@@ -38,7 +53,7 @@ export default {
     flex-direction: column;
     width: 100%;
     position: relative;
-	overflow: auto;
+    overflow: auto;
   }
 }
 
