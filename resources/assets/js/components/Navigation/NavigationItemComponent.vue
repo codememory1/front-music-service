@@ -1,10 +1,10 @@
 <template>
-  <li class="navigation__item" :class="{ active: isActive }">
-    <router-link :to="link">
+  <router-link class="navigation__item" active-class="active" :to="link">
+    <li>
       <svg-alias :alias="iconAlias" />
       {{ label }}
-    </router-link>
-  </li>
+    </li>
+  </router-link>
 </template>
 <script>
 export default {
@@ -33,10 +33,10 @@ export default {
     /**
      * Link that will be clicked on
      *
-     * @type {String}
+     * @type {String || Object}
      */
     link: {
-      type: String,
+      type: [String, Object],
       default: "",
       required: false
     },
@@ -62,54 +62,44 @@ export default {
     display: flex;
     position: relative;
     align-items: center;
+    padding: 15px 0;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
 
-    a {
-      padding: 15px 0;
-      display: flex;
-      align-items: center;
-      width: 100%;
+    svg {
+      margin-right: 15px;
+      width: 18px;
+      height: 18px;
+    }
 
-      svg {
-        margin-right: 15px;
-        width: 18px;
-        height: 18px;
-      }
-
-      &:before {
-        content: "";
-        width: 0;
-        height: 100%;
-        background: linear-gradient(
-          270deg,
-          rgba($accent, 0.3) 0%,
-          rgba($accent, 0) 97.38%
-        );
-        position: absolute;
-        border-right: none;
-        right: 0;
-        transition: width 0.2s ease-in-out, border 0.2s ease-in-out;
-      }
+    &:before {
+      content: "";
+      width: 0;
+      height: 100%;
+      background: linear-gradient(
+        270deg,
+        rgba($accent, 0.3) 0%,
+        rgba($accent, 0) 97.38%
+      );
+      position: absolute;
+      border-right: none;
+      right: 0;
+      transition: width 0.2s ease-in-out, border 0.2s ease-in-out;
     }
 
     &.active {
-      a {
-        svg {
-          ::v-deep path {
-            stroke: $accent;
-          }
-        }
-
-        &:before {
-          width: 100%;
-          border-right: 2px solid $accent;
+      svg {
+        ::v-deep path {
+          stroke: $accent;
         }
       }
-    }
 
-    a {
-      color: #fff;
-      font-size: 14px;
-      font-weight: 500;
+      &:before {
+        width: 100%;
+        border-right: 2px solid $accent;
+      }
     }
   }
 }
