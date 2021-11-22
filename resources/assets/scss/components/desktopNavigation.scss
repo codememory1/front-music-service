@@ -65,6 +65,11 @@
         border-right: 2px solid $accent;
       }
     }
+
+    li {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__items {
