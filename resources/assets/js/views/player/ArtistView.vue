@@ -381,7 +381,7 @@ export default {
       };
     },
 
-    musicItemContextMenu(event) {
+    musicItemContextMenu: function (event, isButton) {
       /**
        * @type {{x: number, y: number}}
        */
@@ -396,6 +396,10 @@ export default {
       setTimeout(() => {
         this.isOpenedMusicItemDropDown = true;
         this.musicItemDropDownX = event.clientX - playerLayoutPosition.x;
+
+        if (true === isButton) {
+          this.musicItemDropDownX -= musicItemDropDownRect.width + 20;
+        }
 
         if (dropDownPosition > window.innerHeight) {
           this.musicItemDropDownY =
