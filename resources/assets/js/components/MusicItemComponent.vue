@@ -1,5 +1,9 @@
 <template>
-  <div class="music-item">
+  <div
+    ref="musicItem"
+    class="music-item"
+    @contextmenu.prevent="$emit('contextmenu', $event)"
+  >
     <div class="music-item__left-info">
       <img class="music-item__image" :src="image" :alt="name" />
       <div class="music-item__names">
@@ -67,6 +71,11 @@ export default {
   transition: background-color 0.4s;
   cursor: pointer;
   border-radius: 5px;
+  position: relative;
+
+  &__drop-down {
+    position: absolute;
+  }
 
   &:hover {
     background-color: lighten($dark-bg, 5%);
