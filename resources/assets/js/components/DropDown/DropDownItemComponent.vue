@@ -91,7 +91,7 @@ export default {
 
     &::before {
       content: "";
-      background-image: url(public/images/icons/arrow-right.svg);
+      background-image: url(/public/images/icons/arrow-right.svg);
       background-repeat: no-repeat;
       width: 10px;
       height: 17px;
