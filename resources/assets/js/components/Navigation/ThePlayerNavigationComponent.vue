@@ -4,22 +4,39 @@
       <navigation-category>
         <template v-slot:items>
           <navigation-item
-            :label="'Home'"
-            :iconAlias="'home-svg'"
-            :is-active="true"
+            label="Home"
+            iconAlias="home-svg"
+            link="/home"
           />
-          <navigation-item :label="'Search'" :iconAlias="'search-svg'" />
-          <navigation-item :label="'History'" :iconAlias="'history-svg'" />
+          <navigation-item
+            label="Search"
+            iconAlias="search-svg"
+            link="/search"
+          />
+          <navigation-item
+            label="History"
+            iconAlias="history-svg"
+            link="/history"
+          />
         </template>
       </navigation-category>
       <navigation-category :title="'Your library'">
         <template v-slot:items>
-          <navigation-item :label="'Artist'" :iconAlias="'artist-svg'" />
-          <navigation-item :label="'Album'" :iconAlias="'album-svg'" />
-          <navigation-item :label="'Favorite songs'" :iconAlias="'like-svg'" />
           <navigation-item
-            :label="'My playlists'"
-            :iconAlias="'playlist-svg'"
+            label="Artist"
+            iconAlias="artist-svg"
+            link="/artists"
+          />
+          <navigation-item label="Album" iconAlias="album-svg" link="/albums" />
+          <navigation-item
+            label="Favorite songs"
+            iconAlias="like-svg"
+            link="/favorite-songs"
+          />
+          <navigation-item
+            label="My playlists"
+            iconAlias="playlist-svg"
+            link="/playlists"
           />
         </template>
       </navigation-category>
